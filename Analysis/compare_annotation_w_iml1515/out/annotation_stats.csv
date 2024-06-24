@@ -1,0 +1,4 @@
+database,original,deprecated_in_original,current,total
+biocyc,205,0,317,322
+metanetx.reaction,320,143,320,322
+kegg.reaction,193,0,206,322

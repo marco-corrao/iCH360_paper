@@ -1,0 +1,8 @@
+﻿reaction_id,direction,value,par_type,unit,condition,enzyme,notes
+RNDR1,fw,12.9,kcat,s-1,manual_curation,RIBONUCLEOSIDE-DIP-REDUCTI-CPLX,max entry for escherichia coli in Brenda (from GECKO3 db)
+RNDR2,fw,12.9,kcat,s-1,manual_curation,RIBONUCLEOSIDE-DIP-REDUCTI-CPLX,max entry for escherichia coli in Brenda (from GECKO3 db)
+RNDR3,fw,12.9,kcat,s-1,manual_curation,RIBONUCLEOSIDE-DIP-REDUCTI-CPLX,max entry for escherichia coli in Brenda (from GECKO3 db)
+RNDR4,fw,12.9,kcat,s-1,manual_curation,RIBONUCLEOSIDE-DIP-REDUCTI-CPLX,max entry for escherichia coli in Brenda (from GECKO3 db)
+GLYK,fw,14.28,kcat,s-1,manual_curation,GLYCEROL-KIN-CPLX,Heckmann_et_al_2020: kcat_in_vitro_per_s_ensemble_model
+XYLK,fw,9.379294311,kcat,s-1,manual_curation,CPLX0-7466,Heckmann_et_al_2020: kcat_in_vitro_per_s_ensemble_model
+MCOATA,fw,6.871365759,kcat,s-1,manual_curation,MALONYL-COA-ACP-TRANSACYL-MONOMER,Heckmann_et_al_2020: kcat_in_vitro_per_s_ensemble_model

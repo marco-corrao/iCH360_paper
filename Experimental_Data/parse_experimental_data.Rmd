@@ -1,0 +1,56 @@
+---
+title: "Parse Experimental Data"
+---
+```{r}
+library(readxl)
+library(plyr,include.only = c('mapvalues'))
+library(dplyr)
+
+```
+
+
+```{r}
+ich360_reactions=read.csv('../Model/model_tables/all_reactions.csv',header = F ) %>% .$`V1`
+```
+
+# Fluxomics
+## 1. Fluxes from Heckman et al. 
+
+```{r}
+heckman_et_al_fluxomics_data=
+  read_xlsx('./raw_data/Heckman_et_al_2020_SI_data.xlsx',sheet = 2) %>% 
+  filter(sample_id %in% c('WT1','WT2')) %>% 
+  filter(react_id %in% ich360_reactions) %>% 
+  select(c('react_id','direction','sample_id','mfa_sampling_ave','mfa_sampling_var','mfa_sampling_lb','mfa_sampling_ub'))
+
+heckman_et_al_fluxomics_data %>% 
+  write.csv('parsed_data/heckman_et_al_2020_fluxomics_parsed.csv')
+```
+
+## 2. Mapped Fluxes from Long and Antoniewicz
+
+```{r}
+long_et_al_fluxomics_data=
+  read.csv('./raw_data/Long_et_al_2019_WT_data.csv')
+
+long_et_al_bigg_map=
+  read.csv('raw_data/Long_et_al_bigg_mapped_rxns.csv')
+
+long_et_al_mapped_fluxomics_data=
+  long_et_al_fluxomics_data %>% 
+  mutate(bigg.reaction=mapvalues(x=long_et_al_fluxomics_data$Rxn,
+                                 from=long_et_al_bigg_map$Long_et_al_2019_rxn,
+                                 to=long_et_al_bigg_map$bigg.reaction),
+         .after='Rxn'
+         ) 
+  long_et_al_mapped_fluxomics_data %>% head()
+  
+long_et_al_mapped_fluxomics_data %>% 
+  write.csv('parsed_data/Long_et_al_2019_WT_mapped_fluxes.csv')
+```
+
+# Metabolomics
+```{r}
+re
+
+```

@@ -1,0 +1,77 @@
+---
+title: "parse_kinetic_data"
+---
+Import required packages
+```{r}
+library(plyr,include.only = c('mapvalues'))
+library(dplyr)
+
+library(readxl)
+library(sybil)
+library(stringr)
+```
+
+First, we load the Heckman et al (2020) data
+```{r}
+#k_app data for growth on glucose
+k_app_data=read_xlsx("../Heckman_et_al_2020/Heckman_et_al_2020_SI_data.xlsx",
+                     sheet='Dataset_S1A_protein_ab')
+#k_app_max data (in-vivo proxy for kcat)
+k_app_max_data=read_xlsx("../Heckman_et_al_2020/Heckman_et_al_2020_SI_data.xlsx",
+                     sheet='Dataset_S1C_turnover_n')
+
+```
+
+Next, we load the enzymatic reactions in the model
+```{r}
+enzymatic_reactions=read.csv('../../../Model/model_tables/enzymatic_reactions.csv',header = F) %>% .$V1
+enzymatic_reactions %>% head(10)
+```
+First, let's deal with k_app (glucose). We remove NAs and only retain wild-type. Further we remove the _b suffix for backward reactions, as that info is already contained in the "direction" column
+```{r}
+wt_k_apps=
+  k_app_data %>% 
+  filter(sample_id %in% c('WT1','WT2')) %>% 
+  filter(kapp_per_s!= 'NA') %>% 
+  mutate(react_id=str_replace(react_id,pattern='_b$',replacement='')) %>% 
+  filter(react_id %in% enzymatic_reactions) %>% 
+  mutate(kapp_per_s=as.numeric(kapp_per_s))
+```
+
+Next, we summarise data. We take each k_app to be the median of of all k_app available
+```{r}
+model_k_apps =
+  wt_k_apps %>% 
+  group_by(react_id,direction) %>% 
+  summarise(median_kapp_per_s=median(kapp_per_s)) %>% 
+  mutate(par_type='k_app',unit='s-1',condition='Glucose',notes='median of calculated k_app') %>% 
+  rename(value=median_kapp_per_s) 
+
+model_k_apps  
+```
+How many kapps do we have?
+```{r}
+print(paste('Number of reactions with kapp in the model:',model_k_apps$react_id %>% unique() %>% length()))
+```
+Now, we parse k_app_max
+```{r}
+model_k_app_max=
+  k_app_max_data %>% 
+  mutate(is_backward=grepl(pattern='_b$',x=react_id)) %>% 
+  mutate(direction=mapvalues(x=is_backward,from=c(T,F),to=c('bwd','fwd')))%>% 
+  mutate(react_id=str_replace(react_id,pattern='_b$',replacement='')) %>% 
+  select(react_id,direction,kappmax_KO_ALE_per_pp_per_s_ensemble_model) %>% 
+  rename(value=kappmax_KO_ALE_per_pp_per_s_ensemble_model) %>% 
+  mutate(par_type='k_appmax',unit='s-1',condition='NA',notes='kappmax_KO_ALE_per_pp_per_s_ensemble_model')
+  
+```
+
+Merge the two
+```{r}
+heckmann_parsed=rbind(model_k_apps,model_k_app_max)
+heckmann_parsed %>% 
+  rename(reaction_id=react_id) %>% 
+  write.csv(file='parsed/heckman_et_al_2020_parsed_kapp_kappmax.csv',row.names = F)
+```
+
+

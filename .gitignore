@@ -1,0 +1,15 @@
+misc/*
+EFM/efm_enumeration/efms/*
+EFM/efm_enumeration/tmp/*
+EFM/efm_enumeration/ich360red_efms.pkl
+Analysis/EFM_growth_yield_screening/out/*
+Thermodynamics/free_energy_estimation/data/custom_compounds_cache.sqlite*
+Manuscript_Figures/*
+Enzyme_Constraints/data/PRESTO*
+*.html
+#*.png
+*.svg
+*.eps
+*.pyc
+*.sqlite
+Knowledge_graph/graph_assembly/biocyc_username_and_password.csv

@@ -1,0 +1,8 @@
+﻿condition_id,strain,type,condition,carbon_source,bigg_carbon_source,growth_rate
+A1-1,EQ353,batch,aerobic,glucose,glc__D_e,0.69
+A1-2,EQ353,batch,aerobic,glucose,glc__D_e,0.69
+A1-3,EQ353,batch,aerobic,glucose,glc__D_e,0.69
+C1,EQ353,batch,aerobic,glucose,glc__D_e,0.73
+F1-1,EQ353,batch,aerobic,glucose,glc__D_e,0.71
+F1-2,EQ353,batch,aerobic,glucose,glc__D_e,0.71
+F1-3,EQ353,batch,aerobic,glucose,glc__D_e,0.71

@@ -1,0 +1,14 @@
+﻿condition_id,strain,type,condition,carbon_source,bigg_carbon_source,growth_rate
+acetate,BW25113,batch,aerobic,acetate,ac_e,0.3
+fumarate,BW25113,batch,aerobic,fumarate,fum_e,0.42
+glycerol,BW25113,batch,aerobic,glycerol,glyc_e,0.47
+pyruvate,BW25113,batch,aerobic,pyruvate,pyr_e,0.4
+fructose,BW25113,batch,aerobic,fructose,fru_e,0.65
+succinate,BW25113,batch,aerobic,succinate,succ_e,0.44
+xylose,BW25113,batch,aerobic,xylose,xyl__D_e,0.55
+glucose_chemostat_mu_0_5,BW25113,chemostat,aerobic,glucose,glc__D_e,0.5
+glucose_chemostat_mu_0_12,BW25113,chemostat,aerobic,glucose,glc__D_e,0.12
+glucose_chemostat_mu_0_20,BW25113,chemostat,aerobic,glucose,glc__D_e,0.2
+glucose_chemostat_mu_0_35,BW25113,chemostat,aerobic,glucose,glc__D_e,0.35
+glucose,BW25113,batch,aerobic,glucose,glc__D_e,0.58
+glucose_MG1655,MG1655,batch,aerobic,glucose,glc__D_e,0.67

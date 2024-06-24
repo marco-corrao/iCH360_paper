@@ -1,0 +1,27 @@
+﻿Growth condition,Strain,Growth rate (h-1)
+LB,BW25113,1.9
+LB,MG1665,1.78
+LB,NCM3722,2.3
+Glycerol + AA,BW25113,1.27
+Acetate,BW25113,0.3
+Fumarate,BW25113,0.42
+Galactose ,BW25113,0.26
+Glucose,BW25113,0.58
+Glucose,MG1665,0.67
+Glucose,NCM3722,1.03
+Glucosamine,BW25113,0.46
+Glycerol,BW25113,0.47
+Pyruvate,BW25113,0.4
+Succinate,BW25113,0.44
+Fructose,BW25113,0.65
+Mannose,BW25113,0.47
+Xylose,BW25113,0.55
+Osmotic-stress glucose3,BW25113,0.55
+42°C glucose,BW25113,0.66
+pH6 glucose,BW25113,0.63
+Stationary phase 1 day,BW25113,-0.01
+Stationary phase 3 days,BW25113,-0.01
+chemostat µ=0.12,BW25113,0.12
+chemostat µ=0.20,BW25113,0.2
+chemostat µ=0.35,BW25113,0.35
+chemostat µ=0.5,BW25113,0.5

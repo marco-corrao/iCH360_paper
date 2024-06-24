@@ -1,0 +1,195 @@
+---
+title: "R Notebook"
+---
+In this notebook, we parse turnover numbers and MW into tables which will be used to set-up sMoment formulation of the model
+
+```{r}
+#Load required packages
+library(plyr,include.only = 'mapvalues')
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(reshape2)
+USE_ONLY_PRIMARY=T
+if (USE_ONLY_PRIMARY){
+   admissible_edge_types=c('catalysis')
+   
+}else{
+  admissible_edge_types=c('catalysis','secondary_catalysis')
+  }
+
+
+```
+Read turnover number and MW data, and enzymatic reactions in model
+
+```{r}
+kcat_data=read.csv('parsed/heckman_et_al_2020_parsed_kapp_kappmax.csv') %>% 
+  mutate(direction=gsub(pattern='bwd',replacement='bw',x=direction)) %>% 
+  mutate(direction=gsub(pattern='fwd',replacement='fw',x=direction)) 
+kcat_data[is.na(kcat_data)]="NA"
+  
+kcat_manual_curation=read.csv('kcat_manual_curation.csv')
+mw_data=read.csv('../../../Model/model_tables/reaction_enzymes_subunits.csv')
+enzymatic_reactions=read.csv('../../../Model/model_tables/enzymatic_reactions.csv',header = F) %>% .$V1
+iml1515_transporters=
+  read.csv('../Heckman_et_al_2020/iML1515_list_of_transporters.csv') %>% 
+  mutate(reaction_id=str_replace(bigg_id,pattern='_[b,f]$',replacement=''))
+paxDB_estimated_abundance=
+  read.csv('../../enzyme_abundance_estimation/schmidt_2016_mass_abundance_mapped_NNLS.csv') %>% 
+  filter(enzyme %in% mw_data$enzyme) %>%
+  select(c('enzyme','paxDB_g_gDW'))
+mw_data$paxDB_abundance=mapvalues(mw_data$enzyme,from=paxDB_estimated_abundance$enzyme,to=paxDB_estimated_abundance$paxDB_g_gDW) %>% as.numeric()
+
+```
+
+Now, following the sMoment formulation, we seek to choose an individual enzyme per reaction. To maximize physiological relevance, we only consider primary catalysis.
+
+Next, following sMOMENT, we pick the one with least MW, as it will be the one chosen in any proteome-limited solution to the model
+
+```{r}
+
+reaction_enzyme_unique=
+  mw_data %>% 
+  mutate(paxDB_abundance=replace_na(paxDB_abundance,0)) %>% 
+  filter(edge_type %in% admissible_edge_types) %>% 
+  group_by(reaction_id) %>% 
+  slice_max(paxDB_abundance)
+reaction_enzyme_unique %>% head()
+```
+### Assemble Glucose-specific and general EC-Model Tables. 
+For the glucose-specific model we choose:
+- A kapp, if available in the dataset
+- A kapp_max if the kapp for the reaction is unavailable
+
+For the general EC-model, we always choose kapp_maxs
+
+```{r}
+default_transporter_kapp=65
+default_kappmax_saturation=1
+
+
+turnover_table=data.frame()
+for (model_type in c('glucose_batch','general')){
+  for(reaction in enzymatic_reactions){
+    #If we have a kapp, use this
+    if(model_type=='glucose_batch' & (reaction %in% (kcat_data %>% filter(par_type=='k_app') %>% .$reaction_id))){
+       turnover_table =rbind(turnover_table,
+                           kcat_data %>% 
+                             filter(par_type=='k_app') %>%
+                             filter(reaction_id==reaction) %>% 
+                             mutate(saturation=1,model_type=model_type))
+    }
+    
+    #If we have a kappmax, use this
+    else 
+    if(reaction %in% (kcat_data %>% filter(par_type=='k_appmax') %>% .$reaction_id)){
+       turnover_table =rbind(turnover_table,
+                                   kcat_data %>% filter(par_type=='k_appmax') %>% 
+                                     filter(reaction_id==reaction) %>% 
+                                     mutate(saturation=default_kappmax_saturation,model_type=model_type))
+    }
+    else
+      if(reaction %in% iml1515_transporters$reaction_id){
+        temp_transporter_df=
+          data.frame(      reaction_id=c(reaction,reaction),
+                           direction=c('fw','bw'),
+                           value=c(default_transporter_kapp,default_transporter_kapp),
+                           par_type=c(default_transporter_kapp,default_transporter_kapp),
+                           unit=c('s-1','s-1'),
+                           condition=c('NA','NA'),
+                           notes=c('same as Heckman et al. 2018','same as Heckman et al. 2018'),
+                           saturation=c(default_kappmax_saturation,default_kappmax_saturation),
+                           model_type=c(model_type,model_type)
+                           )
+       turnover_table=rbind(turnover_table,temp_transporter_df)
+      }
+    #If we have a manual curation, let's
+    if(reaction %in% (kcat_manual_curation %>% .$reaction_id)){
+       turnover_table =rbind(turnover_table,
+                             kcat_manual_curation %>% 
+                            select(!enzyme) %>% 
+                             filter(reaction_id==reaction) %>% 
+                             mutate(saturation=default_kappmax_saturation,model_type=model_type)
+                             )
+    }
+    }
+}
+```
+
+Now, we add info about mapped enzyme, MW, and number of subunits
+```{r}
+EC_table=
+  turnover_table %>% 
+  rename(reaction_id=reaction_id) %>% 
+  mutate(directional_reaction_id=paste(reaction_id,direction,sep='_')) %>% 
+  mutate(enzyme=mapvalues(reaction_id,from=reaction_enzyme_unique$reaction_id,to=reaction_enzyme_unique$enzyme,warn_missing=F),
+         MW=mapvalues(reaction_id,from=reaction_enzyme_unique$reaction_id,to=reaction_enzyme_unique$mw,warn_missing=F) %>% 
+           as.numeric(),
+         num_pp_subunits=mapvalues(reaction_id,from=reaction_enzyme_unique$reaction_id,to=reaction_enzyme_unique$num_subunits,warn_missing=F) %>% 
+           as.numeric()
+         ) %>% 
+  filter(!is.na(MW)) %>% 
+  mutate(kcat_times_pp_num=value*num_pp_subunits)
+
+
+EC_table$EC_kcat_value=EC_table$kcat_times_pp_num
+#EC_table[(EC_table$condition =='manual_curation') %>% replace(is.na(.),F),'EC_kcat_value']=EC_table[(EC_table$condition =='manual_curation')%>% replace(is.na(.),F),'value']
+#For complexes with more than 20 subunits, do not multiply the kcat times the number of subunits, as this would result in unrealistically fast catalysis
+# large_enzyme_complexes=EC_table %>% filter(num_pp_subunits>20) %>% .$enzyme %>% unique()
+# 
+# EC_table$EC_kcat_value=EC_table$kcat_times_pp_num
+# EC_table[EC_table$enzyme %in% large_enzyme_complexes,'EC_kcat_value']=EC_table[EC_table$enzyme %in% large_enzyme_complexes,'value']
+```
+Finally, we compute the cost in enzyme_mass per flux
+
+```{r}
+EC_table %>% 
+  mutate(ec_cost=MW/(saturation*EC_kcat_value*3600))->
+  EC_table
+
+
+EC_table %>% head()
+```
+Finally, we compute a default proteomic bound based on batch growth on glucose
+```{r}
+proteomic_data_glucose=read.csv('../Schmidt_et_al_2016/model_mapped_abundances/schmidt_2016_mass_abundance_mapped_avg.csv') %>% select(c('enzyme','glucose_g_gDW'))
+
+measured_model_total_abundance=
+  proteomic_data_glucose %>% 
+  group_by(enzyme) %>% 
+  slice(1) %>% 
+  ungroup() %>% 
+  .$glucose_g_gDW %>% 
+  sum(na.rm = T)
+
+EC_table=
+  EC_table%>% 
+  mutate(enzyme_pool_bound_g_gDw=measured_model_total_abundance) 
+
+  
+EC_table_no_manual_curation=
+  EC_table %>% 
+  filter(condition!="manual_curation")
+ 
+if (USE_ONLY_PRIMARY){
+EC_table_no_manual_curation %>% write.csv('parsed/EC_table.csv',row.names = F)
+}else{
+  EC_table_no_manual_curation %>% write.csv('parsed/EC_table_w_secondary_edges.csv',row.names = F)
+}
+
+
+```
+
+Also, save a table with manual curation values over kappmax, whenever both exists
+```{r}
+EC_table_manual_curation=
+  EC_table %>% 
+  group_by(reaction_id,enzyme,direction) %>% 
+  filter(if ('manual_curation' %in% condition) condition=='manual_curation' else T) %>%
+  ungroup()
+if (USE_ONLY_PRIMARY){
+EC_table_manual_curation %>% write.csv('parsed/EC_table_w_manual_curation.csv',row.names = F)
+}else{
+EC_table_manual_curation %>% write.csv('parsed/EC_table_w_manual_curation_w_secondary_edges.csv',row.names = F)
+}
+```

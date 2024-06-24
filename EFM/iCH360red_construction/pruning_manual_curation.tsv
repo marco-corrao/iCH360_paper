@@ -1,0 +1,19 @@
+reaction_1	reaction_2	to_prune	notes	sources
+EAR80x	EAR80y	EAR80y	The enzyme (fabI) can work with both NADH/NADPH, but higher activity was found with NADH	Ecocyc, PMID:9022698
+EAR120x	EAR120y	EAR120y	The enzyme (fabI) can work with both NADH/NADPH, but higher activity was found with NADH	Ecocyc, PMID:9022698
+EAR140x	EAR140y	EAR140y	The enzyme (fabI) can work with both NADH/NADPH, but higher activity was found with NADH	Ecocyc, PMID:9022698
+EAR160x	EAR160y	EAR160y	The enzyme (fabI) can work with both NADH/NADPH, but higher activity was found with NADH	Ecocyc, PMID:9022698
+EAR180x	EAR180y	EAR180y	The enzyme (fabI) can work with both NADH/NADPH, but higher activity was found with NADH	Ecocyc, PMID:9022698
+EAR100x	EAR100y	EAR100y	The enzyme (fabI) can work with both NADH/NADPH, but higher activity was found with NADH	Ecocyc, PMID:9022698
+EAR60x	EAR60y	EAR60y	The enzyme (fabI) can work with both NADH/NADPH, but higher activity was found with NADH	Ecocyc, PMID:9022698
+EAR121x	EAR121y	EAR121y	The enzyme (fabI) can work with both NADH/NADPH, but higher activity was found with NADH	Ecocyc, PMID:9022698
+EAR141x	EAR141y	EAR141y	The enzyme (fabI) can work with both NADH/NADPH, but higher activity was found with NADH	Ecocyc, PMID:9022698
+EAR161x	EAR161y	EAR161y	The enzyme (fabI) can work with both NADH/NADPH, but higher activity was found with NADH	Ecocyc, PMID:9022698
+EAR181x	EAR181y	EAR181y	The enzyme (fabI) can work with both NADH/NADPH, but higher activity was found with NADH	Ecocyc, PMID:9022698
+RNDR1,RNDR2	RNDR1b,RNDR2b	RNDR1b,RNDR2b,GRXR	The Ribonucleoside diphospahte reductase can work both wirh thioredoxin and glutaredoxin system. We only keep the thioredoxin version as thioredoxin appears to be more expressed. The Glutaredoxin reductase is removed as there are no other reactions involving glutaredoxin	NA
+NA	NA	RNTR1c2,RNTR2c2,FLDR2	The RNTR should work with formate as an electron donor and is is active under unaerobic conditions. We remove them together with the corresponding Flavodoxin reductase	https://ecocyc.org/gene?orgid=ECOLI&id=EG11417
+NA	NA	ACOATA,KAS14	While FabH possesses some side transacylase activity (ACOATA), this is 200-fold less than its condensation activity (KAS15). Hence this is only a secondary fatty acid initiation route	https://ecocyc.org/gene?orgid=ECOLI&id=EG10277
+VALTA	VPAMTr	VPAMTr	These are both routes to production of valine. We keep VALTA (ilvE) as its the last step in the canonical biosyenthesis route and it is significantly more expressed in proteomic datasets
+SULabcpp	SO4t2pp	SO4t2pp	two different ways of uptaking sulfur. SULabcpp is an ATP-dependent ABC transporter while SO4t2pp (cysZ) is a proton symporter. Unclear which one is more physisologically relevant, but we choose the symporter as it's simpler
+NA	NA	FA80ACPHi,FA100ACPHi,FA120ACPHi,FA140ACPHi,FA160ACPHi,ACPPAT180,APH180	These are reactions converting ACP-bound fatty acids to ACP-free	NA
+NA	NA	AACPS9,AACPS8,AACPS7,AACPS1,AACPS3,AACPS6	These are reactions converting ACP-free fatty acids to ACP-bound
