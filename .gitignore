@@ -5,10 +5,10 @@ EFM/efm_enumeration/ich360red_efms.pkl
 Analysis/EFM_growth_yield_screening/out/*
 Thermodynamics/free_energy_estimation/data/custom_compounds_cache.sqlite*
 Manuscript_Figures/other_figures/*
-Manuscript_Figures/figures/*
 Enzyme_Constraints/data/PRESTO*
 *.html
-#*.png
+*.pdf
+*.png
 *.svg
 *.eps
 *.pyc
