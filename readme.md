@@ -6,6 +6,13 @@ availble at
 
 https://arxiv.org/abs/2406.16596
 
+## Using *i*CH360
+
+This repository is only intended to provide the files and tools to reproduce all results in the paper. If you wish to use *i*CH360 for your own work, please go to the model repo
+
+https://github.com/marco-corrao/iCH360
+
+where you'll find the most up-to-date version of the model and its variants.
 
 ## Navigating the repository
 #### [./Model](./Model)
