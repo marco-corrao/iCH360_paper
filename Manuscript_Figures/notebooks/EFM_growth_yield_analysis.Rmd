@@ -1,0 +1,189 @@
+---
+title: "R Notebook"
+
+---
+
+```{r}
+library(plyr,include.only = 'mapvalues')
+library(dplyr)
+library(ggplot2)
+library(reshape2)
+library(ggrepel)
+library(ggpubr)
+```
+
+#Read Data from the EFM yield cost computation
+```{r}
+data=read.csv('../../Analysis/EFM_growth_yield_screening/out/ich360red_glc__D_aerobic_yield_cost.csv') %>% 
+ rename(efm_id='X')
+```
+
+Compute growth rate and yield of each mode
+
+```{r}
+f=0.2851943972390508
+data=
+  data %>% 
+  arrange(cost,descending=F) %>% 
+  mutate(growth_rate=f*(1/cost)) %>% 
+  mutate(yield_gDW_mol_glc=yield*1000)
+
+data_sample =
+  data %>% 
+  filter(ATPM==0) %>% 
+  head(10000) %>% 
+  mutate(respiratory_ratio=EX_o2_e/EX_glc__D_e)
+
+#=======
+best_yield=
+  data %>% 
+  arrange(desc(yield)) %>% 
+  head(1) %>% 
+  mutate(label='max yield')
+
+best_growth=
+  data %>% 
+  arrange(cost) %>% 
+  head(1) %>% 
+  mutate(label='max growth\n(high O2)')
+
+#=============
+
+```
+Find pareto front
+```{r}
+find_pareto_points= function(data){
+  data=
+    data %>% 
+    arrange(desc(yield))
+  cur_best_growth=0
+  pareto_ixs=c()
+  for (i in c(1:nrow(data))){
+    cur_growth=data[i,'growth_rate']
+    if(cur_growth>cur_best_growth){
+      pareto_ixs=append(pareto_ixs,i)
+      cur_best_growth=cur_growth
+    }
+  }
+    
+  pareto_points=data[pareto_ixs,]
+  return(pareto_points)
+  
+}
+
+pareto_front=find_pareto_points(data)
+pareto_points=pareto_front %>% 
+  filter(growth_rate<best_growth$growth_rate) %>% 
+  filter(yield<best_yield$yield)
+```
+
+
+# PLOTTING
+
+```{r}
+ix_ar=seq(0,nrow(data),by=1)
+pl_1=
+  data %>% 
+  .[ix_ar,] %>% 
+  filter(ATPM==0) %>% 
+  ggplot(aes(x=yield_gDW_mol_glc,y=growth_rate))+
+  geom_point(color='#4C72B0',
+             fill='#4C72B0',
+             alpha=0.4,
+             shape=21,
+             size=2)+
+    labs(x='Yield (gDW / mol Glucose)',
+       y='Growth rate (1/h)')+
+  theme_bw()
+
+pl_1
+           
+  
+
+```
+
+
+
+
+
+
+
+```{r,fig.width=5,fig.height=4}
+zoom_area_xmin=65
+zoom_area_xmax=90
+zoom_area_ymin=0.568
+zoom_area_ymax=0.6
+data_sample %>% 
+  ggplot(aes(x=yield_gDW_mol_glc,y=growth_rate))+
+  geom_point(color='#4C72B0',
+             fill='#4C72B0',
+             alpha=0.4,
+             shape=21,
+             size=3)+
+  xlim(zoom_area_xmin,zoom_area_xmax)+
+  ylim(zoom_area_ymin,zoom_area_ymax)->
+  suboptimal_pl
+
+best_growth_plot=
+  geom_point(data=best_growth,
+             aes(x=yield_gDW_mol_glc,y=growth_rate),
+             color= "#C44E52",
+             shape=15,
+             size=3.5)
+
+best_yield_plot=
+  geom_point(data=best_yield,
+             aes(x=yield_gDW_mol_glc,y=growth_rate),
+             color='#9e893aff',
+             shape=15,
+             size=3.5)
+pareto_efm_plot=
+  geom_point(data=pareto_points,
+             aes(x=yield_gDW_mol_glc,y=growth_rate),
+             color='black',
+             shape=15,
+             size=3)
+
+pl_2=suboptimal_pl+pareto_efm_plot+best_growth_plot+best_yield_plot
+
+#Add labels
+labelled_points=rbind(best_growth,best_yield) #%>% rbind(pareto_points)
+pl_2+
+  theme_bw()+
+  labs(x=element_blank(),
+       y=element_blank())+
+  geom_label_repel(data=labelled_points,
+                   aes(label=label,color=label),
+                   min.segment.length = 0,
+                   fontface = 'bold',
+                   nudge_x=-4,
+                   nudge_y = -0.001,
+                   show.legend = F,
+                   segment.size=1,
+                   size=3
+                   )+
+  scale_color_manual(values=c('#C44E52','#9e893aff','black','black'))->
+  pl_2
+pl_2
+  
+```
+
+```{r,fig.width=8,fig.height=6}
+inset_xmin=-5
+inset_xmax=35
+inset_ymin=0.4
+inset_ymax=0.6
+pl=
+pl_1+
+  geom_rect(xmin=65,xmax=90,ymin=0.568,ymax=0.592,color='red',alpha=0,linewidth=1.5)+
+  annotation_custom(ggplotGrob(pl_2),
+                       xmin=inset_xmin,xmax = inset_xmax,
+                       ymin=inset_ymin,ymax=inset_ymax)
+  
+  
+pl %>% ggsave(filename='../figures/efm_growth_yield_tradeoff.png',dpi=300,width=8,height=6)
+
+pl
+```
+
+

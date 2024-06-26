@@ -1,0 +1,128 @@
+```{r}
+library(dplyr)
+library(ggplot2)
+library(stats)
+library(ggpubr)
+library(ggsci)
+library(reshape2)
+
+deep=c("#4C72B0", "#DD8452", "#55A868", "#C44E52", "#8172B3",
+         "#937860", "#DA8BC3", "#8C8C8C", "#CCB974", "#64B5CD")
+```
+
+```{r}
+annotation_stats= read.csv("../../Analysis/compare_annotation_w_iml1515/out/annotation_stats.csv", header=TRUE)
+
+annotation_stats %>% 
+  mutate(original=original-deprecated_in_original) %>% 
+  mutate(current=current-original-deprecated_in_original) ->
+  annotation_stats
+annotation_stats_long=annotation_stats %>% 
+  select(!total) %>% 
+  melt(id=c('database'))
+annotation_stats_long$variable=factor(annotation_stats_long$variable,levels=c('current','deprecated_in_original','original'))
+
+```
+
+```{r,fig.width=3.2,fig.height=3}
+p=
+  annotation_stats_long %>% 
+  ggbarplot(x='database',y='value',fill='variable')+
+  scale_fill_manual(values=deep,labels=c('added','updated','original'))+
+  labs(x='',y='Count')+
+  scale_x_discrete(labels=c('Biocyc','MetaNetX','KEGG'))+
+  theme_bw()
+p  %>%
+ggpar(
+      legend.title ='',
+      x.text.angle=45,
+      font.xtickslab = c(10),
+      legend='right')->p
+
+p %>% ggsave(filename='../figures/annotation_stats.svg',
+             width=3.2,height=3,bg = "white")
+
+
+p
+```
+```{r,fig.height=4,fig.width=4}
+data=read.csv('../../Analysis/catalytic_disruption_analysis/out/catalytic_disruption_analysis_post_processed_results.csv')
+my_comparisons <- list( c("primary_full", "primary_partial"),
+                        c("primary_full", "secondary"),
+                        c("primary_partial", "secondary")
+                       )
+
+
+colorblind=c("#0173B2", "#DE8F05", "#029E73", "#D55E00", "#CC78BC",
+            "#CA9161", "#FBAFE4", "#949494", "#ECE133", "#56B4E9")
+
+deep=c("#4C72B0", "#DD8452", "#55A868", "#C44E52", "#8172B3",
+         "#937860", "#DA8BC3", "#8C8C8C", "#CCB974", "#64B5CD")
+data %>% 
+  filter(overall_disruption!='complete') %>% 
+  ggboxplot( x = "overall_disruption", 
+             y = "fitness",
+             fill = 'overall_disruption', 
+             order=c('complete','primary_full','primary_partial','secondary'),
+            
+             )+ 
+  stat_compare_means(comparisons = my_comparisons,
+                     method='wilcox.test',
+                     label='p.signif')+ # Add pairwise comparisons p-value
+  scale_fill_manual(values = deep)+
+  theme_bw()+
+  labs(y='Relative fitness (Log2)',x='')+
+  theme(legend.position = "none") +
+  scale_x_discrete(labels=c('full \n primary','partial \n primary','secondary')) ->p
+p %>% 
+  ggpar(font.xtickslab = c(12))->p
+
+p %>% ggsave(filename='../figures/edge_disruptions_comparison.svg',height=4,width=4,dpi=300)
+p %>% ggsave(filename='../figures/edge_disruptions_comparison.pdf',height=4,width=4,dpi=300)
+p
+
+```
+
+```{r}
+print('Primary full vs primary partial')
+wilcox.test(x=data %>% filter(overall_disruption=='primary_full') %>% .$fitness,
+            y=data %>% filter(overall_disruption=='primary_partial') %>% .$fitness, 
+            alternative = "two.sided")
+print('================================ \n\n\n')
+print('Primary partial vs secondary')
+wilcox.test(x=data %>% filter(overall_disruption=='primary_partial') %>% .$fitness,
+            y=data %>% filter(overall_disruption=='secondary') %>% .$fitness, 
+            alternative = "two.sided")
+print('================================ \n\n\n')
+print('Primary full vs secondary')
+wilcox.test(x=data %>% filter(overall_disruption=='primary_full') %>% .$fitness,
+            y=data %>% filter(overall_disruption=='secondary') %>% .$fitness, 
+            alternative = "two.sided")
+
+```
+
+```{r,fig.height=4,fig.width=4}
+my_comparisons <- list( c("complete", "primary_full"))
+data %>% 
+  filter(overall_disruption %in% c('complete','primary_full')) %>% 
+  ggboxplot( x = "overall_disruption", 
+             y = "fitness",
+             fill = 'overall_disruption', 
+             order=c('complete','primary_full')
+             )+ 
+  stat_compare_means(comparisons = my_comparisons,
+                     method='wilcox.test',
+                     )+ # Add pairwise comparisons p-value
+  scale_fill_manual(values = deep)+
+  theme_bw()+
+  labs(y='Relative fitness (Log2)',x='')+
+  theme(legend.position = "none") +
+  scale_x_discrete(labels=c('complete','full \n primary')) ->p
+p %>% 
+  ggpar(font.xtickslab = c(12))->p
+
+p %>% ggsave(filename='../figures/node_disruptions_complete_vs_primary.svg',height=4,width=4,dpi=300)
+p %>% ggsave(filename='../figures/node_disruptions_complete_vs_primary.pdf',height=4,width=4,dpi=300)
+p
+```
+

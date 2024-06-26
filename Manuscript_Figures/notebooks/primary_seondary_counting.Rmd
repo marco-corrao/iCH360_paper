@@ -1,0 +1,11 @@
+---
+title: "R Notebook"
+---
+```{r}
+library(dplyr)
+```
+
+```{r}
+isozyme_data=read.csv('../')
+```
+
