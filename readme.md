@@ -1,8 +1,10 @@
 This repository contains code and data required to reproduce all results in: 
 
-_*i*CH360: A compact model of *Escherichia Coli* core and biosynthetic metabolism_
+_*A compact model of *Escherichia Coli* core and biosynthetic metabolism_
 
-by Marco Corrao, Hai He, Wolfram Liebermeister, and Elad Noor
+availble at
+
+https://arxiv.org/abs/2406.16596
 
 
 ## Navigating the repository
