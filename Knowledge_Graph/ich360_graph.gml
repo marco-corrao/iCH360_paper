@@ -12689,7 +12689,7 @@ graph [
     type "protein"
     subtype "modified_protein"
     biocyc_id "PTSH-PHOSPHORYLATED"
-    mw "NA"
+    mw NAN
   ]
   node [
     id 1026
@@ -12785,7 +12785,7 @@ graph [
     type "protein"
     subtype "modified_protein"
     biocyc_id "MALONYL-ACP"
-    mw "NA"
+    mw NAN
   ]
   node [
     id 1038
@@ -14273,7 +14273,7 @@ graph [
     type "protein"
     subtype "modified_protein"
     biocyc_id "ACYL-ACP"
-    mw "NA"
+    mw NAN
   ]
   node [
     id 1224
