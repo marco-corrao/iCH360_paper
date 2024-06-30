@@ -14276,6 +14276,10 @@
           <fbc:and>
             <fbc:geneProductRef fbc:geneProduct="G_b2234"/>
             <fbc:geneProductRef fbc:geneProduct="G_b2235"/>
+            <fbc:or>
+              <fbc:geneProductRef fbc:geneProduct="G_b3781"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b2582"/>
+            </fbc:or>
           </fbc:and>
         </fbc:geneProductAssociation>
       </reaction>
@@ -14376,6 +14380,10 @@
           <fbc:and>
             <fbc:geneProductRef fbc:geneProduct="G_b2234"/>
             <fbc:geneProductRef fbc:geneProduct="G_b2235"/>
+            <fbc:or>
+              <fbc:geneProductRef fbc:geneProduct="G_b3781"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b2582"/>
+            </fbc:or>
           </fbc:and>
         </fbc:geneProductAssociation>
       </reaction>
@@ -14415,6 +14423,10 @@
           <fbc:and>
             <fbc:geneProductRef fbc:geneProduct="G_b2234"/>
             <fbc:geneProductRef fbc:geneProduct="G_b2235"/>
+            <fbc:or>
+              <fbc:geneProductRef fbc:geneProduct="G_b3781"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b2582"/>
+            </fbc:or>
           </fbc:and>
         </fbc:geneProductAssociation>
       </reaction>
@@ -15036,8 +15048,14 @@
         </listOfProducts>
         <fbc:geneProductAssociation>
           <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
-            <fbc:geneProductRef fbc:geneProduct="G_b1095"/>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+            </fbc:and>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b1095"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+            </fbc:and>
           </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
@@ -16137,7 +16155,10 @@
           <speciesReference species="M_malACP_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:geneProductRef fbc:geneProduct="G_b1092"/>
+          <fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_b1092"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+          </fbc:and>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="meta_R_DAPE" sboTerm="SBO:0000176" id="R_DAPE" name="Diaminopimelate epimerase" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
@@ -16525,7 +16546,13 @@
           <speciesReference species="M_trdrd_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:geneProductRef fbc:geneProduct="G_b0888"/>
+          <fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_b0888"/>
+            <fbc:or>
+              <fbc:geneProductRef fbc:geneProduct="G_b3781"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b2582"/>
+            </fbc:or>
+          </fbc:and>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="meta_R_DDPA" sboTerm="SBO:0000176" id="R_DDPA" name="3-deoxy-D-arabino-heptulosonate 7-phosphate synthetase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
@@ -16812,7 +16839,7 @@
                   <rdf:li rdf:resource="https://identifiers.org/bigg.reaction/G5SADs"/>
                   <rdf:li rdf:resource="https://identifiers.org/biocyc/ECOLI:SPONTPRO-RXN"/>
                   <rdf:li rdf:resource="https://identifiers.org/kegg.reaction/R03314"/>
-                  <rdf:li rdf:resource="https://identifiers.org/metanetx.reaction/MNXR99897"/>
+                  <rdf:li rdf:resource="https://identifiers.org/metanetx.reaction/MNXR153703"/>
                   <rdf:li rdf:resource="https://identifiers.org/reactome/R-HSA-70655"/>
                   <rdf:li rdf:resource="https://identifiers.org/reactome/R-HSA-70667"/>
                   <rdf:li rdf:resource="https://identifiers.org/rhea/28237"/>
@@ -16821,6 +16848,7 @@
                   <rdf:li rdf:resource="https://identifiers.org/rhea/28236"/>
                   <rdf:li rdf:resource="https://identifiers.org/seed.reaction/rxn11220"/>
                   <rdf:li rdf:resource="https://identifiers.org/seed.reaction/rxn02374"/>
+                  <rdf:li rdf:resource="https://identifiers.org/deprecated_metanetx.reaction/MNXR99897"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -17467,7 +17495,13 @@
           <speciesReference species="M_trdox_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:geneProductRef fbc:geneProduct="G_b2762"/>
+          <fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_b2762"/>
+            <fbc:or>
+              <fbc:geneProductRef fbc:geneProduct="G_b3781"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b2582"/>
+            </fbc:or>
+          </fbc:and>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="meta_R_ASPK" sboTerm="SBO:0000176" id="R_ASPK" name="Aspartate kinase" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
@@ -18590,7 +18624,10 @@
           <speciesReference species="M_coa_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:geneProductRef fbc:geneProduct="G_b1091"/>
+          <fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_b1091"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+          </fbc:and>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="meta_R_ACtex" sboTerm="SBO:0000185" id="R_ACtex" name="Acetate transport via diffusion (extracellular to periplasm)" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
@@ -19968,7 +20005,7 @@
                   <rdf:li rdf:resource="https://identifiers.org/bigg.reaction/GLCtex"/>
                   <rdf:li rdf:resource="https://identifiers.org/biocyc/ECOLI:RXN0-2481"/>
                   <rdf:li rdf:resource="https://identifiers.org/deprecated_metanetx.reaction/MNXR100188"/>
-                  <rdf:li rdf:resource="https://identifiers.org/metanetx.reaction/MNXR100188"/>
+                  <rdf:li rdf:resource="https://identifiers.org/metanetx.reaction/MNXR145025"/>
                   <rdf:li rdf:resource="https://identifiers.org/sabiork.reaction/7002"/>
                   <rdf:li rdf:resource="https://identifiers.org/sabiork.reaction/601"/>
                   <rdf:li rdf:resource="https://identifiers.org/seed.reaction/rxn09875"/>
@@ -20772,9 +20809,30 @@
         </listOfProducts>
         <fbc:geneProductAssociation>
           <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="G_b3610"/>
-            <fbc:geneProductRef fbc:geneProduct="G_b0849"/>
-            <fbc:geneProductRef fbc:geneProduct="G_b1064"/>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b3610"/>
+              <fbc:or>
+                <fbc:geneProductRef fbc:geneProduct="G_b0849"/>
+                <fbc:geneProductRef fbc:geneProduct="G_b1064"/>
+                <fbc:geneProductRef fbc:geneProduct="G_b3610"/>
+              </fbc:or>
+            </fbc:and>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b0849"/>
+              <fbc:or>
+                <fbc:geneProductRef fbc:geneProduct="G_b0849"/>
+                <fbc:geneProductRef fbc:geneProduct="G_b1064"/>
+                <fbc:geneProductRef fbc:geneProduct="G_b3610"/>
+              </fbc:or>
+            </fbc:and>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b1064"/>
+              <fbc:or>
+                <fbc:geneProductRef fbc:geneProduct="G_b0849"/>
+                <fbc:geneProductRef fbc:geneProduct="G_b1064"/>
+                <fbc:geneProductRef fbc:geneProduct="G_b3610"/>
+              </fbc:or>
+            </fbc:and>
           </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
@@ -20812,6 +20870,11 @@
           <fbc:and>
             <fbc:geneProductRef fbc:geneProduct="G_b2675"/>
             <fbc:geneProductRef fbc:geneProduct="G_b2676"/>
+            <fbc:or>
+              <fbc:geneProductRef fbc:geneProduct="G_b0849"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1064"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b3610"/>
+            </fbc:or>
           </fbc:and>
         </fbc:geneProductAssociation>
       </reaction>
@@ -20849,6 +20912,11 @@
           <fbc:and>
             <fbc:geneProductRef fbc:geneProduct="G_b2675"/>
             <fbc:geneProductRef fbc:geneProduct="G_b2676"/>
+            <fbc:or>
+              <fbc:geneProductRef fbc:geneProduct="G_b0849"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1064"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b3610"/>
+            </fbc:or>
           </fbc:and>
         </fbc:geneProductAssociation>
       </reaction>
@@ -21047,6 +21115,7 @@
             <fbc:geneProductRef fbc:geneProduct="G_b3749"/>
             <fbc:geneProductRef fbc:geneProduct="G_b3750"/>
             <fbc:geneProductRef fbc:geneProduct="G_b3751"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b3748"/>
           </fbc:and>
         </fbc:geneProductAssociation>
       </reaction>
@@ -21764,6 +21833,8 @@
           <fbc:and>
             <fbc:geneProductRef fbc:geneProduct="G_b1101"/>
             <fbc:geneProductRef fbc:geneProduct="G_b2417"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2416"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2415"/>
           </fbc:and>
         </fbc:geneProductAssociation>
       </reaction>
@@ -22216,6 +22287,10 @@
           <fbc:and>
             <fbc:geneProductRef fbc:geneProduct="G_b2234"/>
             <fbc:geneProductRef fbc:geneProduct="G_b2235"/>
+            <fbc:or>
+              <fbc:geneProductRef fbc:geneProduct="G_b3781"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b2582"/>
+            </fbc:or>
           </fbc:and>
         </fbc:geneProductAssociation>
       </reaction>
@@ -23333,7 +23408,10 @@
           <speciesReference species="M_co2_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+          <fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+          </fbc:and>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="meta_R_DHQS" sboTerm="SBO:0000176" id="R_DHQS" name="3-dehydroquinate synthase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
@@ -23561,7 +23639,10 @@
           <speciesReference species="M_co2_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+          <fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+          </fbc:and>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="meta_R_3OAR121" sboTerm="SBO:0000176" id="R_3OAR121" name="3-oxoacyl-[acyl-carrier-protein] reductase (n-C12:1)" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
@@ -23817,6 +23898,8 @@
             <fbc:geneProductRef fbc:geneProduct="G_b1819"/>
             <fbc:geneProductRef fbc:geneProduct="G_b1818"/>
             <fbc:geneProductRef fbc:geneProduct="G_b1817"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2416"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2415"/>
           </fbc:and>
         </fbc:geneProductAssociation>
       </reaction>
@@ -24910,7 +24993,10 @@
           <speciesReference species="M_co2_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:geneProductRef fbc:geneProduct="G_b1095"/>
+          <fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_b1095"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+          </fbc:and>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="meta_R_3OAS140" sboTerm="SBO:0000176" id="R_3OAS140" name="3-oxoacyl-[acyl-carrier-protein] synthase (n-C14:0)" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
@@ -24945,8 +25031,14 @@
         </listOfProducts>
         <fbc:geneProductAssociation>
           <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="G_b1095"/>
-            <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b1095"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+            </fbc:and>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+            </fbc:and>
           </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
@@ -25399,8 +25491,14 @@
         </listOfProducts>
         <fbc:geneProductAssociation>
           <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="G_b1095"/>
-            <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b1095"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+            </fbc:and>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+            </fbc:and>
           </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
@@ -25436,8 +25534,14 @@
         </listOfProducts>
         <fbc:geneProductAssociation>
           <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="G_b1095"/>
-            <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b1095"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+            </fbc:and>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+            </fbc:and>
           </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
@@ -25684,7 +25788,10 @@
           <speciesReference species="M_co2_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+          <fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+          </fbc:and>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="meta_R_3OAS80" sboTerm="SBO:0000176" id="R_3OAS80" name="3-oxoacyl-[acyl-carrier-protein] synthase (n-C8:0)" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
@@ -25719,8 +25826,14 @@
         </listOfProducts>
         <fbc:geneProductAssociation>
           <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="G_b1095"/>
-            <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b1095"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+            </fbc:and>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+            </fbc:and>
           </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
@@ -25756,8 +25869,14 @@
         </listOfProducts>
         <fbc:geneProductAssociation>
           <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="G_b1095"/>
-            <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b1095"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+            </fbc:and>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+            </fbc:and>
           </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
@@ -25793,8 +25912,14 @@
         </listOfProducts>
         <fbc:geneProductAssociation>
           <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="G_b1095"/>
-            <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b1095"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+            </fbc:and>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+            </fbc:and>
           </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
@@ -26237,8 +26362,14 @@
         </listOfProducts>
         <fbc:geneProductAssociation>
           <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="G_b1095"/>
-            <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b1095"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+            </fbc:and>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b2323"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1094"/>
+            </fbc:and>
           </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
@@ -26527,7 +26658,7 @@
           <fbc:geneProductRef fbc:geneProduct="G_b4020"/>
         </fbc:geneProductAssociation>
       </reaction>
-      <reaction metaid="meta_R_SUCCt1pp" sboTerm="SBO:0000185" id="R_SUCCt1pp" name="Succinate transport via diffusion in (periplasm)" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+      <reaction metaid="meta_R_SUCCt1pp" sboTerm="SBO:0000185" id="R_SUCCt1pp" name="Succinate transport via diffusion in (periplasm)" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>original_bigg_ids: [&apos;SUCCt1pp&apos;]</p>
@@ -26546,10 +26677,10 @@
           </rdf:RDF>
         </annotation>
         <listOfReactants>
-          <speciesReference species="M_succ_p" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_succ_c" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="M_succ_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_succ_p" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
           <fbc:or>
@@ -26820,6 +26951,32 @@
                   <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK1254"/>
                   <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/tryp"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/P0A877"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </fbc:geneProduct>
+      <fbc:geneProduct metaid="meta_G_b1094" sboTerm="SBO:0000243" fbc:id="G_b1094" fbc:name="acpP" fbc:label="G_b1094">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>original_bigg_ids: [&apos;b1094&apos;]</p>
+          </html>
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_G_b1094">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0003703"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG50003"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/944805"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigi/16129057"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_locus_tag/b1094"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_name/acpP"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK1080"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW1080"/>
+                  <rdf:li rdf:resource="https://identifiers.org/uniprot/P0A6A8"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -28831,6 +28988,36 @@
           </rdf:RDF>
         </annotation>
       </fbc:geneProduct>
+      <fbc:geneProduct metaid="meta_G_b3781" sboTerm="SBO:0000243" fbc:id="G_b3781" fbc:name="trxA" fbc:label="G_b3781">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>original_bigg_ids: [&apos;b3781&apos;]</p>
+          </html>
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_G_b3781">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0012357"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG11031"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/948289"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigi/67005950"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_locus_tag/b3781"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_name/trxA"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/fip"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/fipA"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK3773"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW5856"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/tsnC"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/dasC"/>
+                  <rdf:li rdf:resource="https://identifiers.org/uniprot/P0AA25"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </fbc:geneProduct>
       <fbc:geneProduct metaid="meta_G_b2762" sboTerm="SBO:0000243" fbc:id="G_b2762" fbc:name="cysH" fbc:label="G_b2762">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
@@ -28851,6 +29038,33 @@
                   <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW2732"/>
                   <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK2757"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/P17854"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </fbc:geneProduct>
+      <fbc:geneProduct metaid="meta_G_b2582" sboTerm="SBO:0000243" fbc:id="G_b2582" fbc:name="trxC" fbc:label="G_b2582">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>original_bigg_ids: [&apos;b2582&apos;]</p>
+          </html>
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_G_b2582">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0008501"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG11887"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/947062"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigi/16130507"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_locus_tag/b2582"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_name/trxC"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW2566"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/yfiG"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK2580"/>
+                  <rdf:li rdf:resource="https://identifiers.org/uniprot/P0AGG4"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -29771,6 +29985,35 @@
           </rdf:RDF>
         </annotation>
       </fbc:geneProduct>
+      <fbc:geneProduct metaid="meta_G_b2415" sboTerm="SBO:0000243" fbc:id="G_b2415" fbc:name="ptsH" fbc:label="G_b2415">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>original_bigg_ids: [&apos;b2415&apos;]</p>
+          </html>
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_G_b2415">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0007962"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG10788"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/946886"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigi/16130341"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_locus_tag/b2415"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_name/ptsH"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ctr"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/hpr"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW2408"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK2410"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/iex?"/>
+                  <rdf:li rdf:resource="https://identifiers.org/uniprot/P0AA04"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </fbc:geneProduct>
       <fbc:geneProduct metaid="meta_G_b0485" sboTerm="SBO:0000243" fbc:id="G_b0485" fbc:name="glsA" fbc:label="G_b0485">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
@@ -29793,6 +30036,33 @@
                   <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ybaS"/>
                   <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW0474"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/P77454"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </fbc:geneProduct>
+      <fbc:geneProduct metaid="meta_G_b2416" sboTerm="SBO:0000243" fbc:id="G_b2416" fbc:name="ptsI" fbc:label="G_b2416">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>original_bigg_ids: [&apos;b2416&apos;]</p>
+          </html>
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_G_b2416">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0007967"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG10789"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/946879"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigi/16130342"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_locus_tag/b2416"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_name/ptsI"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK2411"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ctr"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW2409"/>
+                  <rdf:li rdf:resource="https://identifiers.org/uniprot/P08839"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -33112,6 +33382,33 @@
                   <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK3863"/>
                   <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW3841"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/P0A9C5"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </fbc:geneProduct>
+      <fbc:geneProduct metaid="meta_G_b3748" sboTerm="SBO:0000243" fbc:id="G_b3748" fbc:name="rbsD" fbc:label="G_b3748">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>original_bigg_ids: [&apos;b3748&apos;]</p>
+          </html>
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_G_b3748">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0012256"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG10817"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/948267"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigi/90111647"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_locus_tag/b3748"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_name/rbsD"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW5857"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK3742"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/rbsP"/>
+                  <rdf:li rdf:resource="https://identifiers.org/uniprot/P04982"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
