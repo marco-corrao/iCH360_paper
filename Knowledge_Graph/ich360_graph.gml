@@ -39812,7 +39812,7 @@ graph [
     source 1254
     target 1255
     weight "NA"
-    type "logical_OR"
+    type "logical"
     notes "Thioredoxin is involved in this reaction as a redox cofactor"
     subtype "NA"
   ]
@@ -39820,7 +39820,7 @@ graph [
     source 1254
     target 1256
     weight "NA"
-    type "logical_OR"
+    type "logical"
     notes "Thioredoxin is involved in this reaction as a redox cofactor"
     subtype "NA"
   ]
@@ -39846,7 +39846,7 @@ graph [
     source 1257
     target 580
     weight "NA"
-    type "logic_operator"
+    type "logical"
     notes "Glutaredoxin is involved in this reaction as a redox cofactor"
     subtype "NA"
   ]
@@ -39854,7 +39854,7 @@ graph [
     source 1257
     target 581
     weight "NA"
-    type "logic_operator"
+    type "logical"
     notes "Glutaredoxin is involved in this reaction as a redox cofactor"
     subtype "NA"
   ]
@@ -39862,7 +39862,7 @@ graph [
     source 1257
     target 579
     weight "NA"
-    type "logic_operator"
+    type "logical"
     notes "Glutaredoxin is involved in this reaction as a redox cofactor"
     subtype "NA"
   ]
