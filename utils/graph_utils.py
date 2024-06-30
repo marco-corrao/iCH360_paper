@@ -53,7 +53,7 @@ def add_rxns_to_graph(session,bigg_rxns,bigg2biocyc_map,graph,db='ECOLI',cache=N
                                           'target':enzyme_id,
                                           'weight':'NA',
                                           'type':'catalysis',
-                                          'subtype':"NA",
+                                          'subtype':'primary', #default catalysis subtype
                                           'notes':'',
                                           'references':''
                                           })
@@ -72,6 +72,7 @@ def add_edge(graph_dict,
              type=None,
              metadata={},
              parse_from_biocyc=False,
+             biocyc_objects_cache=None,
              session=None,
              overwrite=False):
     '''
@@ -127,7 +128,7 @@ def add_edge(graph_dict,
                 print(f'No session provided. Unable to parse components of {child_node["id"]} from biocyc')
             else:
                 print(f'Parsing components of {child_node["id"]} from biocyc as this node was not found in the graph')
-                objects,edges,nodes,type=biocyc_query_utils.find_components_recursively(session,child_node['id'],objects,nodes,edges)
+                objects,edges,nodes,type=biocyc_query_utils.find_components_recursively(session,child_node['id'],objects,nodes,edges,cache=biocyc_objects_cache)
         else:
             print(f"Adding child node {child_node} to the graph dict")
             nodes.append(child_node)
@@ -138,7 +139,7 @@ def add_edge(graph_dict,
                 print(f'No session provided. Unable to parse components of {child_node["id"]} from biocyc')
             else:
                 print(f'Parsing components of {child_node["id"]} from biocyc as this node was not found in the graph')
-                objects,edges,nodes,type=biocyc_query_utils.find_components_recursively(session,child_node['id'],objects,nodes,edges)
+                objects,edges,nodes,type=biocyc_query_utils.find_components_recursively(session,child_node['id'],objects,nodes,edges,cache=biocyc_objects_cache)
         else:
             print(f"Adding parent node {parent_node} to the graph dict")
             nodes.append(parent_node)
@@ -285,89 +286,6 @@ def add_node_attributes_from_df(graph,df):
     return graph
 
 
-
-
-
-
-
-def graph_visualisation(graph,rxn=None):
-    '''
-    Visualise a graph using PyVis
-    '''
-    if rxn is not None:
-        g=nx.subgraph(graph,
-                   nx.node_connected_component(nx.Graph(graph),rxn)
-                   )
-    else:
-        g=graph
-    plot=Network(notebook=True,cdn_resources='remote',directed=True)
-    attributes=g.nodes.data()
-    for node in g.nodes():
-        plot.add_node(node,label=node,group=attributes[node]['type'])
-    for edge in g.edges.data():
-        plot.add_edge(edge[0],edge[1],label=str(edge[2]['weight']))
-    return plot
-
-def create_subgraph_for_visualisation(graph,rxn=None,omit_putative=True):
-    '''
-    Visualise a the subgraph for rxn graph using Gravis
-    '''
-    if rxn is not None:
-        g=graph.subgraph(
-                   nx.node_connected_component(nx.Graph(graph),rxn)
-                   ).copy()
-        rxn_enzymes=list(g.successors(rxn))
-    else:
-        g=graph.copy()
-    
-    #Prune all other reaction nodes
-   
-    for node in list(g.nodes):
-        for edge in list(g.out_edges(node)):
-            if g.edges[edge]['type']=='regulation' and edge[1] not in rxn_enzymes:
-                g.remove_edge(edge[0],edge[1])
-            elif g.edges[edge]['type'] in ['putative_gpr','putative gpr'] and omit_putative:
-                g.remove_edge(edge[0],edge[1])
-    for edge in g.edges:
-        if g.edges[edge]['weight']=='NA':
-            g.edges[edge]['weight']=''
-
-    g=g.subgraph(
-            nx.node_connected_component(nx.Graph(g),rxn)
-            ).copy()       
-    #g.remove_nodes(to_remove)
-
-    cmap={'reaction':'red',
-          'protein':{'multimeric_protein':'blue','modified_protein':'yellow','polypeptide':'lightblue'},
-          'gene':'green',
-          'compound':'gray',
-          'logical_OR':'pink'}
-    
-    cmap_edges={'catalysis':'red',
-                'secondary_catalysis':'pink',
-                'regulation':'#0BBCFF',
-                
-                }
-
-    
-    plot=Network(notebook=True,cdn_resources='remote',directed=True)
-    attributes=g.nodes.data()
-    for node in g.nodes():
-        if attributes[node]['type'] in cmap.keys():
-            if attributes[node]['type']=='protein':
-                protein_subtype=attributes[node]['subtype']
-                g.nodes[node]['color']=cmap['protein'][protein_subtype]
-            else:
-                g.nodes[node]['color']=cmap[attributes[node]['type']]
-        else:
-            g.nodes[node]['color']='black'
-    for edge in g.edges:
-        if g.edges[edge]['type'] in cmap_edges.keys():
-            g.edges[edge]['color']=cmap_edges[g.edges[edge]['type']]
-        else:
-            g.edges[edge]['color']='black'
-    return g
-
 def genes_in_gpr(gpr_rule):
     s=gpr_rule.replace('(','')
     s=s.replace(')','')
@@ -392,9 +310,10 @@ def gpr_join(gpr_list,operator,brackets=True):
             return f'({joint})'
         else:   
             return joint
-def compute_node_gpr(graph,node,spontaneous_gpr='s0001',
-                     catalysis_types=['catalysis','secondary_catalysis','spontaneous_reaction'],
-                     protein_requirement_types=['non_catalytic_requirement'],
+def compute_node_gpr(graph,node,
+                     catalysis_subtypes_to_include=['primary','secondary'],
+                     include_spontaneous=True,
+                     spontaneous_gpr='s0001',
                      ):
     node_type=graph.nodes[node]['type']
     node_subtype=graph.nodes[node]['subtype']
@@ -402,20 +321,23 @@ def compute_node_gpr(graph,node,spontaneous_gpr='s0001',
         node_gpr= graph.nodes[node]['annotation']['bnum'] if 'bnum' in graph.nodes[node]['annotation']['bnum'] else ''
     elif node_type=='reaction':
         #The GPR of a reaction is the OR of the GPRs of its children connected via a catalysis node.
-        # In addition each catalytic child is ANDed with the gpr of any protein_metabolite
-        catalytic_edge_types=catalysis_types
-        catalytic_children=[child for child in graph.successors(node) if graph.edges[node,child]['type'] in catalytic_edge_types]
+        # In addition each catalytic child is ANDed with the gpr of any non-catalytic requirement
+        catalytic_children=[child for child in graph.successors(node) 
+                            if 
+                            ((graph.edges[node,child]['type']=='catalysis' and graph.edges[node,child]['subtype'] in catalysis_subtypes_to_include) 
+                            or
+                            (include_spontaneous and graph.edges[node,child]['type']=='spontaneous_reaction'))
+                            ]
         catalytic_children_gprs=[compute_node_gpr(graph,child) for child in catalytic_children]
 
-        protein_requirements_edge_types=protein_requirement_types
-        protein_requirement_children=[child for child in graph.successors(node) if graph.edges[node,child]['type']in protein_requirements_edge_types]
+        protein_requirement_children=[child for child in graph.successors(node) if graph.edges[node,child]['type']=='non_catalytic_requirement']
         protein_requirement_children_gprs=[compute_node_gpr(graph,child) for child in protein_requirement_children]
         protein_requirements_gpr=gpr_join(protein_requirement_children_gprs,'and')
         
         reaction_gpr=gpr_join([
                                 gpr_join([gpr,protein_requirements_gpr],'and') 
-                               for gpr in catalytic_children_gprs
-                               ],
+                                for gpr in catalytic_children_gprs
+                              ],
                               'or',
                               brackets=False)
         
@@ -436,8 +358,7 @@ def compute_node_gpr(graph,node,spontaneous_gpr='s0001',
             children_gprs=[compute_node_gpr(graph,child) for child in  graph.successors(node) if graph.edges[node,child]['type'] in edges_to_include]
             node_gpr= gpr_join(children_gprs,'and')
         else:
-            edges_to_include=['subunit_composition']
-            children_gprs=[compute_node_gpr(graph,child) for child in  graph.successors(node) if graph.edges[node,child]['type']  in edges_to_include]
+            children_gprs=[compute_node_gpr(graph,child) for child in  graph.successors(node) if (graph.edges[node,child]['type']=='subunit_composition' and graph.edges[node,child]['subtype']=='requirement') ]
             node_gpr= gpr_join(children_gprs,'and')
     elif node_type=='spontaneous':
         node_gpr= spontaneous_gpr
@@ -474,12 +395,18 @@ def compute_node_mw(graph,node,pp_mw_map):
     Compute the MW of each protein or complex in the graph recursively, based on known MW of the polypeptides in the graph.
     (All other proteins or complexes can be reduced to stoichiometric compositions of polypeptides)
     '''
-    assert node['type']!='reaction'
+    assert graph.nodes[node]['type']=='protein'
     #Now recursively compute the MW of the node
-    if node['subtype']=='polypeptide':
-        mw=pp_mw_map[node['id']]
+    if graph.nodes[node]['subtype']=='polypeptide':
+        mw=pp_mw_map[node]
+    elif graph.nodes[node]['subtype']=='modified_protein':
+        unmodified_protein_nodes=[n for n in graph.successors(node) if graph.edges[node,n]['type']=='protein_modification']
+        if len(unmodified_protein_nodes)>0:
+            mw=compute_node_mw(graph,unmodified_protein_nodes[0],pp_mw_map)
+        else:
+            mw=None
     else: 
-        mw=np.sum([compute_node_mw(graph,graph.nodes[child],pp_mw_map)*graph.edges[node['id'],child]['weight'] for child in graph.successors(node['id'])if graph.edges[node['id'],child]['type']=='subunit_composition'])
+        mw=np.sum([compute_node_mw(graph,child,pp_mw_map)*graph.edges[node,child]['weight'] for child in graph.successors(node)if graph.edges[node,child]['type']=='subunit_composition'])
 
     return mw
 def compute_graph_mw(graph,pp_mw_map):
@@ -488,10 +415,10 @@ def compute_graph_mw(graph,pp_mw_map):
     (All other proteins or complexes can be reduced to stoichiometric compositions of polypeptides)
     '''
     #Find all nodes that are not reactions
-    nodes=[node for node in graph.nodes() if graph.nodes[node]['type']!='reaction']
+    nodes=[node for node in graph.nodes if graph.nodes[node]['type']=='protein']
     for i,node in enumerate(nodes):
         #print(node)
-        graph.nodes[node]['mw']=compute_node_mw(graph,graph.nodes[node],pp_mw_map)
+        graph.nodes[node]['mw']=compute_node_mw(graph,node,pp_mw_map)
     return graph
 
 def bnum2uniprot(graph,gene):
@@ -542,10 +469,17 @@ def number_of_pp_subunits(graph,node):
     '''
     recursively Compute the number of polypeptide subunits of a node, weighted by the stoichiometry of the connection
     '''
+    assert graph.nodes[node]['type']=='protein'
     if graph.nodes[node]['subtype']=='polypeptide':
         return 1
+    elif graph.nodes[node]['subtype']=='modified_protein':
+        unmodified_protein_nodes=[n for n in graph.successors(node) if graph.edges[node,n]['type']=='protein_modification']
+        if len(unmodified_protein_nodes)>0:
+            return number_of_pp_subunits(graph,unmodified_protein_nodes[0])
+        else:
+            return 0.
     else:
-        return np.sum([number_of_pp_subunits(graph,child)*graph.edges[node,child]['weight'] for child in graph.successors(node)])
+        return np.sum([number_of_pp_subunits(graph,child)*graph.edges[node,child]['weight'] for child in graph.successors(node) if graph.edges[node,child]['type']=='subunit_composition'])
 
 def compute_node_pp_composition(graph,node):
     """
@@ -554,10 +488,17 @@ def compute_node_pp_composition(graph,node):
     """
     if graph.nodes[node]['subtype']=='polypeptide':
         return {node:1}
+    elif graph.nodes[node]['subtype']=='modified_protein':
+        unmodified_protein_nodes=[n for n in graph.successors(node) if graph.edges[node,n]['type']=='protein_modification']
+        if len(unmodified_protein_nodes)>0:
+            return compute_node_pp_composition(graph,unmodified_protein_nodes[0])
+        else:
+            print(f"Warning: unable to find unmodified version of protein {node}. Returning empty dict")
+            return {}
     else:
         #Recursively search all path to polypeptides
         pp_composition={}
-        for child in graph.successors(node):
+        for child in [child_node for child_node in graph.successors(node) if graph.edges[node,child_node]['type']=='subunit_composition']:
             child_composition=compute_node_pp_composition(graph,child)
             for pp in child_composition.keys():
                 if pp in pp_composition.keys():
@@ -565,7 +506,7 @@ def compute_node_pp_composition(graph,node):
                 else:
                     pp_composition[pp]=child_composition[pp]*graph.edges[node,child]['weight']
     return pp_composition
-def compute_catalytic_nodes(graph,catalysis_types=['catalysis','secondary_catalysis']):
+def compute_catalytic_nodes(graph,catalysis_subtypes=['primary','secondary']):
     '''
     Compute all enzyme nodes in the graph, i.e. all nodes directly connected to a reaction node via a catalysis or secondary catalysis role
     '''
@@ -573,6 +514,6 @@ def compute_catalytic_nodes(graph,catalysis_types=['catalysis','secondary_cataly
     for node in graph.nodes:
         if graph.nodes[node]['type']=='reaction':
             for child in graph.successors(node):
-                if graph.edges[node,child]['type'] in catalysis_types:
+                if graph.edges[node,child]['type']=='catalysis' and graph.edges[node,child]['subtype'] in catalysis_subtypes :
                     enzyme_nodes.append(child)
     return list(set(enzyme_nodes))

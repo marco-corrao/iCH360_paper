@@ -121,7 +121,7 @@ def find_components_recursively(session,protein_id,objects,nodes,edges,db='ECOLI
                          'target':c_id,
                          'weight':c_stoich,
                          'type':'subunit_composition',
-                         'subtype':"NA",
+                         'subtype':"requirement",
                          'notes':'',
                          'references':''})
             objects,edges,nodes,child_type=find_components_recursively(session,c_id,objects,nodes,edges,db=db,cache=cache)
