@@ -404,7 +404,7 @@ def compute_node_mw(graph,node,pp_mw_map):
         if len(unmodified_protein_nodes)>0:
             mw=compute_node_mw(graph,unmodified_protein_nodes[0],pp_mw_map)
         else:
-            mw=None
+            mw=np.nan
     else: 
         mw=np.sum([compute_node_mw(graph,child,pp_mw_map)*graph.edges[node,child]['weight'] for child in graph.successors(node)if graph.edges[node,child]['type']=='subunit_composition'])
 
