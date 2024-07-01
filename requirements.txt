@@ -1,0 +1,17 @@
+cobra
+scipy
+efmtool
+numpy
+pandas
+tqdm
+networkx
+pyvis
+matplotlib
+cvxpy
+equilibrator_api
+component_contribution
+equilibrator_assets
+seaborn
+plotnine
+pta  # if you encounter errors during the installation, set the environment parameter PTA_NO_SAMPLERS=1
+gurobipy
