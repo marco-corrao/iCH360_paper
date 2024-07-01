@@ -14,3 +14,4 @@ equilibrator_assets
 seaborn
 plotnine
 pta  # if you encounter errors during the installation, set the environment parameter PTA_NO_SAMPLERS=1
+gurobipy
