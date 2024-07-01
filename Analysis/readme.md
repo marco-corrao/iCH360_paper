@@ -4,7 +4,16 @@ This folder contains the code required to reproduce all analysis presented in th
 - Screening of the EFMs of *i*CH360red for growth and yield (`./EFM_growth_yield_screening`). Note that the output files for this analysis are quite large and are not included in this repository, but can be generated running `/EFM_growth_yield_screening/compute_efm_cost_yield.ipynb`. This required the EFM enumeration files to have also been generated in advance (see `../EFM/efm_enumeration`)
 - saturation FBA analysis [3] (`./satFBA`)
 - Probabilistic Max-min driving force (MDF) analysis (adapted from [4]) (`./MDF`)
-- Probabilistic thermodynamic analysis [5] (`./PTA`)
+- Probabilistic thermodynamic analysis [5] (`./PTA`).
+
+**Note**
+
+To run the Probabilistic thermodynamic analysis script, you will need to install the `pta` package. To reproduce results in this repositry, it suffices to install the package without the sampler dependencies (whose einstallation can be more involved) by running
+```
+PTA_NO_SAMPLERS=1 pip install pta             # Linux, OSX
+set "PTA_NO_SAMPLERS=1" && pip install pta    # Windows
+```
+
 
 #### References
 1. Monk, J. M. et al. iML1515, a knowledgebase that computes Escherichia coli traits. Nat Biotechnol 35, 904–908 (2017).
