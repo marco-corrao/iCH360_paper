@@ -1,0 +1,12 @@
+cobra
+scipy
+efmtool
+numpy
+pandas
+tqdm
+networkx
+pyvis
+equilibrator_api
+equilibrator_assets
+matplotlib
+cvxpy
