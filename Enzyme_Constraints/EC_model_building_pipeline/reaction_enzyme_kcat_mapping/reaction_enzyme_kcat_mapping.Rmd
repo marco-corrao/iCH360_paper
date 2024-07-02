@@ -12,10 +12,10 @@ library(stringr)
 library(reshape2)
 USE_ONLY_PRIMARY=T
 if (USE_ONLY_PRIMARY){
-   admissible_edge_types=c('catalysis')
+   admissible_edge_subtypes=c('primary')
    
 }else{
-  admissible_edge_types=c('catalysis','secondary_catalysis')
+  admissible_edge_subtypes=c('primary','secondary')
   }
 
 
@@ -32,7 +32,7 @@ kcat_manual_curation=read.csv('kcat_manual_curation.csv')
 mw_data=read.csv('../../../Model/model_tables/reaction_enzymes_subunits.csv')
 enzymatic_reactions=read.csv('../../../Model/model_tables/enzymatic_reactions.csv',header = F) %>% .$V1
 iml1515_transporters=
-  read.csv('../Heckman_et_al_2020/iML1515_list_of_transporters.csv') %>% 
+  read.csv('../../data/Heckman_et_al_2020/iML1515_list_of_transporters.csv') %>% 
   mutate(reaction_id=str_replace(bigg_id,pattern='_[b,f]$',replacement=''))
 paxDB_estimated_abundance=
   read.csv('../../enzyme_abundance_estimation/schmidt_2016_mass_abundance_mapped_NNLS.csv') %>% 
@@ -51,7 +51,7 @@ Next, following sMOMENT, we pick the one with least MW, as it will be the one ch
 reaction_enzyme_unique=
   mw_data %>% 
   mutate(paxDB_abundance=replace_na(paxDB_abundance,0)) %>% 
-  filter(edge_type %in% admissible_edge_types) %>% 
+  filter(catalysis_type %in% admissible_edge_subtypes) %>% 
   group_by(reaction_id) %>% 
   slice_max(paxDB_abundance)
 reaction_enzyme_unique %>% head()
@@ -152,7 +152,7 @@ EC_table %>% head()
 ```
 Finally, we compute a default proteomic bound based on batch growth on glucose
 ```{r}
-proteomic_data_glucose=read.csv('../Schmidt_et_al_2016/model_mapped_abundances/schmidt_2016_mass_abundance_mapped_avg.csv') %>% select(c('enzyme','glucose_g_gDW'))
+proteomic_data_glucose=read.csv('../../enzyme_abundance_estimation/schmidt_2016_mass_abundance_mapped_NNLS.csv') %>% select(c('enzyme','glucose_g_gDW'))
 
 measured_model_total_abundance=
   proteomic_data_glucose %>% 

@@ -13884,7 +13884,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b2234 and b2235",
+"gene_reaction_rule":"b2234 and b2235 and (b3781 or b2582)",
 "notes":{
 "original_bigg_ids":"[&apos;RNDR1&apos;]"
 },
@@ -13966,7 +13966,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b2234 and b2235",
+"gene_reaction_rule":"b2234 and b2235 and (b3781 or b2582)",
 "notes":{
 "original_bigg_ids":"[&apos;RNDR3&apos;]"
 },
@@ -13993,7 +13993,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b2234 and b2235",
+"gene_reaction_rule":"b2234 and b2235 and (b3781 or b2582)",
 "notes":{
 "original_bigg_ids":"[&apos;RNDR4&apos;]"
 },
@@ -14455,7 +14455,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"(b0185 and b2316) and b3256 and b3255",
+"gene_reaction_rule":"b0185 and b2316 and b3256 and b3255",
 "notes":{
 "original_bigg_ids":"[&apos;ACCOAC&apos;]"
 },
@@ -14543,7 +14543,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b2323 or b1095",
+"gene_reaction_rule":"(b2323 and b1094) or (b1095 and b1094)",
 "notes":{
 "original_bigg_ids":"[&apos;KAS14&apos;]"
 },
@@ -15487,7 +15487,7 @@
 },
 "lower_bound":-1000.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b1092",
+"gene_reaction_rule":"b1092 and b1094",
 "notes":{
 "original_bigg_ids":"[&apos;MCOATA&apos;]"
 },
@@ -15806,7 +15806,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b0888",
+"gene_reaction_rule":"b0888 and (b3781 or b2582)",
 "notes":{
 "original_bigg_ids":"[&apos;TRDR&apos;]"
 },
@@ -16068,8 +16068,9 @@
 "annotation":{
 "bigg.reaction":"G5SADs",
 "biocyc":"ECOLI:SPONTPRO-RXN",
+"deprecated_metanetx.reaction":"MNXR99897",
 "kegg.reaction":"R03314",
-"metanetx.reaction":"MNXR99897",
+"metanetx.reaction":"MNXR153703",
 "reactome":[
 "R-HSA-70655",
 "R-HSA-70667"
@@ -16612,7 +16613,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b2762",
+"gene_reaction_rule":"b2762 and (b3781 or b2582)",
 "notes":{
 "original_bigg_ids":"[&apos;PAPSR&apos;]"
 },
@@ -17564,7 +17565,7 @@
 },
 "lower_bound":-1000.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b1091",
+"gene_reaction_rule":"b1091 and b1094",
 "notes":{
 "original_bigg_ids":"[&apos;ACOATA&apos;]"
 },
@@ -18471,7 +18472,7 @@
 },
 "lower_bound":-1000.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"(b3737 and b3736 and b3738) and (b3731 and b3735 and b3734 and b3733 and b3732)",
+"gene_reaction_rule":"b3737 and b3736 and b3738 and b3731 and b3735 and b3734 and b3733 and b3732",
 "notes":{
 "original_bigg_ids":"[&apos;ATPS4rpp&apos;]"
 },
@@ -18735,7 +18736,7 @@
 "bigg.reaction":"GLCtex",
 "biocyc":"ECOLI:RXN0-2481",
 "deprecated_metanetx.reaction":"MNXR100188",
-"metanetx.reaction":"MNXR100188",
+"metanetx.reaction":"MNXR145025",
 "sabiork.reaction":[
 "7002",
 "601"
@@ -19345,7 +19346,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b3610 or b0849 or b1064",
+"gene_reaction_rule":"(b3610 and (b0849 or b1064 or b3610)) or (b0849 and (b0849 or b1064 or b3610)) or (b1064 and (b0849 or b1064 or b3610))",
 "notes":{
 "original_bigg_ids":"[&apos;GRXR&apos;]"
 },
@@ -19371,7 +19372,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b2675 and b2676",
+"gene_reaction_rule":"b2675 and b2676 and (b0849 or b1064 or b3610)",
 "notes":{
 "original_bigg_ids":"[&apos;RNDR1b&apos;]"
 },
@@ -19396,7 +19397,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b2675 and b2676",
+"gene_reaction_rule":"b2675 and b2676 and (b0849 or b1064 or b3610)",
 "notes":{
 "original_bigg_ids":"[&apos;RNDR2b&apos;]"
 },
@@ -19555,7 +19556,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b3749 and b3750 and b3751",
+"gene_reaction_rule":"b3749 and b3750 and b3751 and b3748",
 "notes":{
 "original_bigg_ids":"[&apos;RIBabcpp&apos;]"
 },
@@ -20178,7 +20179,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b1101 and b2417",
+"gene_reaction_rule":"b1101 and b2417 and b2416 and b2415",
 "notes":{
 "original_bigg_ids":"[&apos;GLCptspp&apos;]"
 },
@@ -20583,7 +20584,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b2234 and b2235",
+"gene_reaction_rule":"b2234 and b2235 and (b3781 or b2582)",
 "notes":{
 "original_bigg_ids":"[&apos;RNDR2&apos;]"
 },
@@ -21554,7 +21555,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b2323",
+"gene_reaction_rule":"b2323 and b1094",
 "notes":{
 "original_bigg_ids":"[&apos;3OAS161&apos;]"
 },
@@ -21734,7 +21735,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b2323",
+"gene_reaction_rule":"b2323 and b1094",
 "notes":{
 "original_bigg_ids":"[&apos;3OAS141&apos;]"
 },
@@ -21933,7 +21934,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b1819 and b1818 and b1817",
+"gene_reaction_rule":"b1819 and b1818 and b1817 and b2416 and b2415",
 "notes":{
 "original_bigg_ids":"[&apos;FRUpts2pp&apos;]"
 },
@@ -22797,7 +22798,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b1095",
+"gene_reaction_rule":"b1095 and b1094",
 "notes":{
 "original_bigg_ids":"[&apos;3OAS181&apos;]"
 },
@@ -22822,7 +22823,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b1095 or b2323",
+"gene_reaction_rule":"(b1095 and b1094) or (b2323 and b1094)",
 "notes":{
 "original_bigg_ids":"[&apos;3OAS140&apos;]"
 },
@@ -23159,7 +23160,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b1095 or b2323",
+"gene_reaction_rule":"(b1095 and b1094) or (b2323 and b1094)",
 "notes":{
 "original_bigg_ids":"[&apos;3OAS60&apos;]"
 },
@@ -23184,7 +23185,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b1095 or b2323",
+"gene_reaction_rule":"(b1095 and b1094) or (b2323 and b1094)",
 "notes":{
 "original_bigg_ids":"[&apos;3OAS160&apos;]"
 },
@@ -23371,7 +23372,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b2323",
+"gene_reaction_rule":"b2323 and b1094",
 "notes":{
 "original_bigg_ids":"[&apos;3OAS121&apos;]"
 },
@@ -23396,7 +23397,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b1095 or b2323",
+"gene_reaction_rule":"(b1095 and b1094) or (b2323 and b1094)",
 "notes":{
 "original_bigg_ids":"[&apos;3OAS80&apos;]"
 },
@@ -23421,7 +23422,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b1095 or b2323",
+"gene_reaction_rule":"(b1095 and b1094) or (b2323 and b1094)",
 "notes":{
 "original_bigg_ids":"[&apos;3OAS100&apos;]"
 },
@@ -23446,7 +23447,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b1095 or b2323",
+"gene_reaction_rule":"(b1095 and b1094) or (b2323 and b1094)",
 "notes":{
 "original_bigg_ids":"[&apos;3OAS120&apos;]"
 },
@@ -23777,7 +23778,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b1095 or b2323",
+"gene_reaction_rule":"(b1095 and b1094) or (b2323 and b1094)",
 "notes":{
 "original_bigg_ids":"[&apos;3OAS180&apos;]"
 },
@@ -23831,7 +23832,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b2288 and b2282 and b2280 and b2279 and b2278 and b2277 and b2276 and (b2287 and b2286 and b2285 and b2284 and b2283 and b2281)",
+"gene_reaction_rule":"b2288 and b2282 and b2280 and b2279 and b2278 and b2277 and b2276 and b2287 and b2286 and b2285 and b2284 and b2283 and b2281",
 "notes":{
 "original_bigg_ids":"[&apos;NADH16pp&apos;]"
 },
@@ -23858,7 +23859,7 @@
 },
 "lower_bound":0.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"b2288 and b2282 and b2280 and b2279 and b2278 and b2277 and b2276 and (b2287 and b2286 and b2285 and b2284 and b2283 and b2281)",
+"gene_reaction_rule":"b2288 and b2282 and b2280 and b2279 and b2278 and b2277 and b2276 and b2287 and b2286 and b2285 and b2284 and b2283 and b2281",
 "notes":{
 "original_bigg_ids":"[&apos;NADH17pp&apos;]"
 },
@@ -23993,10 +23994,10 @@
 "id":"SUCCt1pp",
 "name":"Succinate transport via diffusion in (periplasm)",
 "metabolites":{
-"succ_c":1.0,
-"succ_p":-1.0
+"succ_c":-1.0,
+"succ_p":1.0
 },
-"lower_bound":-1000.0,
+"lower_bound":0.0,
 "upper_bound":1000.0,
 "gene_reaction_rule":"b1206 or b0010 or b3528",
 "notes":{
@@ -24235,6 +24236,27 @@
 ],
 "sbo":"SBO:0000243",
 "uniprot":"P0A877"
+}
+},
+{
+"id":"b1094",
+"name":"acpP",
+"notes":{
+"original_bigg_ids":"[&apos;b1094&apos;]"
+},
+"annotation":{
+"asap":"ABE-0003703",
+"ecogene":"EG50003",
+"ncbigene":"944805",
+"ncbigi":"16129057",
+"refseq_locus_tag":"b1094",
+"refseq_name":"acpP",
+"refseq_synonym":[
+"ECK1080",
+"JW1080"
+],
+"sbo":"SBO:0000243",
+"uniprot":"P0A6A8"
 }
 },
 {
@@ -25871,6 +25893,31 @@
 }
 },
 {
+"id":"b3781",
+"name":"trxA",
+"notes":{
+"original_bigg_ids":"[&apos;b3781&apos;]"
+},
+"annotation":{
+"asap":"ABE-0012357",
+"ecogene":"EG11031",
+"ncbigene":"948289",
+"ncbigi":"67005950",
+"refseq_locus_tag":"b3781",
+"refseq_name":"trxA",
+"refseq_synonym":[
+"fip",
+"fipA",
+"ECK3773",
+"JW5856",
+"tsnC",
+"dasC"
+],
+"sbo":"SBO:0000243",
+"uniprot":"P0AA25"
+}
+},
+{
 "id":"b2762",
 "name":"cysH",
 "notes":{
@@ -25889,6 +25936,28 @@
 ],
 "sbo":"SBO:0000243",
 "uniprot":"P17854"
+}
+},
+{
+"id":"b2582",
+"name":"trxC",
+"notes":{
+"original_bigg_ids":"[&apos;b2582&apos;]"
+},
+"annotation":{
+"asap":"ABE-0008501",
+"ecogene":"EG11887",
+"ncbigene":"947062",
+"ncbigi":"16130507",
+"refseq_locus_tag":"b2582",
+"refseq_name":"trxC",
+"refseq_synonym":[
+"JW2566",
+"yfiG",
+"ECK2580"
+],
+"sbo":"SBO:0000243",
+"uniprot":"P0AGG4"
 }
 },
 {
@@ -26636,6 +26705,30 @@
 }
 },
 {
+"id":"b2415",
+"name":"ptsH",
+"notes":{
+"original_bigg_ids":"[&apos;b2415&apos;]"
+},
+"annotation":{
+"asap":"ABE-0007962",
+"ecogene":"EG10788",
+"ncbigene":"946886",
+"ncbigi":"16130341",
+"refseq_locus_tag":"b2415",
+"refseq_name":"ptsH",
+"refseq_synonym":[
+"ctr",
+"hpr",
+"JW2408",
+"ECK2410",
+"iex?"
+],
+"sbo":"SBO:0000243",
+"uniprot":"P0AA04"
+}
+},
+{
 "id":"b0485",
 "name":"glsA",
 "notes":{
@@ -26656,6 +26749,28 @@
 ],
 "sbo":"SBO:0000243",
 "uniprot":"P77454"
+}
+},
+{
+"id":"b2416",
+"name":"ptsI",
+"notes":{
+"original_bigg_ids":"[&apos;b2416&apos;]"
+},
+"annotation":{
+"asap":"ABE-0007967",
+"ecogene":"EG10789",
+"ncbigene":"946879",
+"ncbigi":"16130342",
+"refseq_locus_tag":"b2416",
+"refseq_name":"ptsI",
+"refseq_synonym":[
+"ECK2411",
+"ctr",
+"JW2409"
+],
+"sbo":"SBO:0000243",
+"uniprot":"P08839"
 }
 },
 {
@@ -29360,6 +29475,28 @@
 ],
 "sbo":"SBO:0000243",
 "uniprot":"P0A9C5"
+}
+},
+{
+"id":"b3748",
+"name":"rbsD",
+"notes":{
+"original_bigg_ids":"[&apos;b3748&apos;]"
+},
+"annotation":{
+"asap":"ABE-0012256",
+"ecogene":"EG10817",
+"ncbigene":"948267",
+"ncbigi":"90111647",
+"refseq_locus_tag":"b3748",
+"refseq_name":"rbsD",
+"refseq_synonym":[
+"JW5857",
+"ECK3742",
+"rbsP"
+],
+"sbo":"SBO:0000243",
+"uniprot":"P04982"
 }
 },
 {
