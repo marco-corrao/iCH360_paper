@@ -47,7 +47,15 @@ def strip_direction(rxn_id):
     return re.sub('_fw$|_bw$','',rxn_id)
 def create_ec_model_from_table(model,ec_table,method='sMOMENT',verbose=False):
     '''
-    Creates an enzyme-constrained model from a metabolic model and an enzyme table
+    Creates an enzyme-constrained model from a metabolic model and an enzyme constraints table. the table should be a pandas dataframe with the following columns:
+    - reaction_id: the ID of the reaction in the model
+    - direction: the direction of the reaction (fw or bw) to which apply the contraint
+    - ec_cost: the enzyme cost per unit flux (in units of g*h/mmol)
+
+    The following optional columns can be added to add metadata to the EC-model
+    - enzyme: the enzyme name
+    -MW: the molecular weight of the enzyme, in kDa
+    -EC_kcat_value: the kcat value of the enzyme-reaction-direction combination, in 1/s
     '''
 
     model_ec=model.copy()
@@ -62,7 +70,7 @@ def create_ec_model_from_table(model,ec_table,method='sMOMENT',verbose=False):
             rxn_id=row['reaction_id']
             direction=row['direction']
             cost=row['ec_cost']
-            enzyme=row['enzyme']
+            
 
             if direction in ['fwd','fw','forward']:
                 try:
@@ -82,11 +90,15 @@ def create_ec_model_from_table(model,ec_table,method='sMOMENT',verbose=False):
                 raise ValueError('direction must be forward or backward')
             if r is not None:
                 r.add_metabolites({enzyme_pool_metabolite:-cost},combine=True)
-                #Note down which enzyme the cost is based on
-                r.annotation['smoment_enzyme']=enzyme
-                r.annotation['smoment_mw']=row['MW']
-                r.annotation['smoment_kcat_per_s']=row['EC_kcat_value']
-        #If any reaction is left without cost, set thgat to 0
+
+                #ADD metadata about the enzyme, its MW, and its kcat, if present in the table
+                if "enzyme" in row.index:
+                    r.annotation['smoment_enzyme']=row['enzyme']
+                if 'MW' in row.index:
+                    r.annotation['smoment_mw']=row['MW']
+                if 'EC_kcat_value' in row.index:
+                    r.annotation['smoment_kcat_per_s']=row['EC_kcat_value']
+        #If any reaction is left without cost, set that to 0
         for r in model_ec.reactions:
             if enzyme_pool_metabolite not in r.metabolites.keys():
                 model_ec.reactions.get_by_id(r.id).add_metabolites({enzyme_pool_metabolite:0},combine=True)
