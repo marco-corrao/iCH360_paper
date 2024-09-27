@@ -47,7 +47,39 @@ Contains mappings between genes and polypeptides retrieved from the EcoCyc datab
 Contains all the notebooks (in python and R) required to reproduce the figures in the paper.
 
 
+## Dependencies
+The following packages are used throughout the repo:
+```
+# General dependencies (used throughout)
+cobra==0.29.0
+numpy==1.24.0
+scipy==1.10.1
+pandas==1.5.3
+matplotlib==3.7.1
+seaborn==0.12.2
+networkx==3.0
+tqdm==4.65.0
+requests==2.28.2
 
+Additional dependencies are required to reproduce some analyses:
+
+# EFM enumeration
+efmtool==0.2.1
+
+# turnover number fitting procedure:
+gurobipy==11.0.1 #requires a valid GUROBI licence
+casadi==3.6.3
+
+# MDF analysis
+gurobipy==11.0.1 #requires a valid GUROBI licence
+
+# Thermodynamic constant estimation
+equilibrator-api==0.4.7
+equilibrator-assets==0.4.1
+cvxpy==1.5.2
+
+
+```
 ## References
  1. King, Z. A. et al. Escher: A Web Application for Building, Sharing, and Embedding Data-Rich Visualizations of Biological Pathways. PLOS Computational Biology 11, e1004321 (2015).
  2. Keseler, I. M. et al. The EcoCyc database: reflecting new knowledge about _Escherichia coli_ K-12. Nucleic Acids Res 45, D543–D550 (2017).
