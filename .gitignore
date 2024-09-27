@@ -1,5 +1,5 @@
 misc/*
-EFM/efm_enumeration/efms/*
+EFM/efm_enumeration/efms/*.csv
 EFM/efm_enumeration/tmp/*
 EFM/efm_enumeration/ich360red_efms.pkl
 Analysis/EFM_growth_yield_screening/out/*
