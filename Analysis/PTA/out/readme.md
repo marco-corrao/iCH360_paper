@@ -11,5 +11,5 @@ Fluxes and thermodynamic state computed by PTA:
 ## [pta_metabolite_concentrations](./pta_metabolites_concentrations.csv)
 Metabolite concentration computed by PTA
 - **conc**: predicted concentration, in mM
-- **z_log_c**: x-score for the deviation of the predicted log concentration from the prior
+- **z_log_c**: z-score for the deviation of the predicted log concentration from the prior
 
