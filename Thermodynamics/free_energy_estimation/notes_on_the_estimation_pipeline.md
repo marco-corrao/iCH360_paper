@@ -12,7 +12,7 @@ Toa address this issue, we thus replaced all protein-involving groups by a chemi
 - For the protein cofactor *glutaredoxin*, its Cys-Pro-Tyr-Cys active site was used, with the two cysteines being either free (for the reduced form of the protein) or bound by a disulfite bridge (for the oxidised form of the protein). 
 
 For example, let's consider the example of the octanoyl-ACP metabolite (bigg:ocACP). For computing thermodynamic estimates, the original protein bound compound (top) is replaced with the chemically "tractable" version ocPPT (bottom) where the ACP is replaced by a PPT side group.
-![alt text](ocACP_replacement_example.png)
+![alt text](acp_replacements/ocACP_replacement_example.png)
 
 By systematically performing these replacement across all relevant compounds in the model, we obtain the set of "equivalent" compounds shown below:
 ![alt text](acp_replacements/PPT-FA.png)
