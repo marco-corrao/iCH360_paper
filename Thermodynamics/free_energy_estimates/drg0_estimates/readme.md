@@ -10,11 +10,9 @@ Here, $S$ is the stoichiometric matrix of the network, $\epsilon_l$ is a vector 
 $$\Delta_rG'^{\circ}\sim N(\bar{\Delta_rG'^{\circ}}, \Sigma)$$
 where $\bar{\Delta_rG'^{\circ}} \equiv \bar{\Delta_rG^{\circ}}+(S^\top \epsilon_l)$
 ### Multi-Compartment corrections
-To account for reactions occurring across compartments, we further add a constant correction the the random vector of estimates. Hence, we compute the multi-compartment-corrected transformed Gibbs free energies of reactions (\Delta_rG'^{\circ}_{MC}) as:
-$$\Delta_rG'^{\circ}_{MC}=\Delta_rG^{\circ}+(S^\top \epsilon_{MC})$$
+To account for reactions occurring across compartments, we further add a constant correction the the random vector of estimates. Hence, we compute the multi-compartment-corrected transformed Gibbs free energies of reactions ($\Delta_rG'^{\circ}_{MC}$) as: $$\Delta_rG'^{\circ}_{MC}=\Delta_rG^{\circ}+(S^\top \epsilon_{MC})$$
 where $\epsilon_{MC}$ is another vector of corrections (again, one per metabolite), used to correct for reactions occurring across compartments. Again, see [1] for details on the computation of these this correction vector.
-Similarly to before, the multi-compartment correction only affects the mean estimate, yielding:
-$$\Delta_rG'^{\circ}_{MC} \sim N(\bar{\Delta_rG'^{\circ}}_{MC},~\Sigma)$$
+Similarly to before, the multi-compartment correction only affects the mean estimate, yielding:$$\Delta_rG'^{\circ}_{MC} \sim N(\bar{\Delta_rG'^{\circ}}_{MC},~\Sigma)$$
 where $\bar{\Delta_rG'^{\circ}}_{MC} \equiv \bar{\Delta_rG'^{\circ}}+(S^\top \epsilon_{MC})$
 
 The compartment parameters used for Legendre transfom and multi-compartment crrections are

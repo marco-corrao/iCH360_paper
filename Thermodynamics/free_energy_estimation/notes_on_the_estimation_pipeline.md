@@ -7,7 +7,7 @@ The reason for this is that the component contribution methods works by decompos
 If we were only interested in computing standard free energy of reaction, $\Delta_rG^\circ$, we could simply extend the EQuilibrator group incidence matrix (matrix $G$ in [2]) with "dummy" groups (e.g. a [-ACP] chemical group) and use these to compute the decomposition for the relevant metabolites. However, in order to compute _transformed_  standard free energy of reaction, $\Delta_r'G^\circ$, one does unfortunately require knowledge of the specific chemical composition of each compound.
 
 To address this issue, we thus replaced all protein-involving groups by a chemical group that best mimic the chemical environment of the original side-group. Particularly:
-- For *&**ACP-bound compounds**, the ACP side group was replaced by a Phosphopantetheine group, which is the natural prosthetic group of the acyl carrier protein (ACP)
+- For **ACP-bound compounds**, the ACP side group was replaced by a Phosphopantetheine group, which is the natural prosthetic group of the acyl carrier protein (ACP)
 - The **free ACP protein** was approximated by a a Phosphopantetheine (PPT) group, where the attachment site to the ACP scaffold is methylated
 - For the protein redox cofactor **glutaredoxin**, its Cys-Pro-Tyr-Cys active site was used, with the two cysteines being either free (for the reduced form of the protein) or bound by a disulfite bridge (for the oxidised form of the protein). 
 
