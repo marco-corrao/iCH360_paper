@@ -1,0 +1,305 @@
+metabolite_id,name,compartment
+dhap_c,Dihydroxyacetone phosphate,c
+prbatp_c,1-(5-Phosphoribosyl)-ATP,c
+10fthf_c,10-Formyltetrahydrofolate,c
+co2_e,CO2 CO2,e
+akg_e,2-Oxoglutarate,e
+2pg_c,D-Glycerate 2-phosphate,c
+13dpg_c,3-Phospho-D-glyceroyl phosphate,c
+prbamp_c,1-(5-Phosphoribosyl)-AMP,c
+fpram_c,2-(Formamido)-N1-(5-phospho-D-ribosyl)acetamidine,c
+thr__L_c,L-Threonine,c
+fum_p,Fumarate,p
+gln__L_e,L-Glutamine,e
+3ohexACP_c,3-Oxohexanoyl-[acyl-carrier protein],c
+3ocddec5eACP_c,3-oxo-cis-dodec-5-enoyl-[acyl-carrier protein],c
+r5p_c,Alpha-D-Ribose 5-phosphate,c
+akg_c,2-Oxoglutarate,c
+ac_c,Acetate,c
+citr__L_c,L-Citrulline,c
+34hpp_c,3-(4-Hydroxyphenyl)pyruvate,c
+pep_c,Phosphoenolpyruvate,c
+h_c,H+,c
+rib__D_c,D-Ribose,c
+gthrd_c,Reduced glutathione,c
+actACP_c,Acetoacetyl-ACP,c
+actp_c,Acetyl phosphate,c
+pyr_p,Pyruvate,p
+cyst__L_c,L-Cystathionine,c
+dutp_c,DUTP C9H11N2O14P3,c
+h2o_p,H2O H2O,p
+glyc3p_c,Glycerol 3-phosphate,c
+2ahbut_c,(S)-2-Aceto-2-hydroxybutanoate,c
+ser__L_c,L-Serine,c
+toct2eACP_c,Trans-Oct-2-enoyl-[acyl-carrier protein],c
+ump_c,UMP C9H11N2O9P,c
+3pg_c,3-Phospho-D-glycerate,c
+ctp_c,CTP C9H12N3O14P3,c
+dadp_c,DADP C10H12N5O9P2,c
+xu5p__D_c,D-Xylulose 5-phosphate,c
+aspsa_c,L-Aspartate 4-semialdehyde,c
+thex2eACP_c,Trans-Hex-2-enoyl-[acyl-carrier protein],c
+t3c9palmeACP_c,Trans-3-cis-9-palmitoleoyl-[acyl-carrier protein],c
+accoa_c,Acetyl-CoA,c
+arg__L_c,L-Arginine,c
+26dap_LL_c,"LL-2,6-Diaminoheptanedioate",c
+asp__L_c,L-Aspartate,c
+acg5sa_c,N-Acetyl-L-glutamate 5-semialdehyde,c
+hexACP_c,Hexanoyl-ACP (n-C6:0ACP),c
+skm_c,Shikimate,c
+imp_c,IMP C10H11N4O8P,c
+o2_c,O2 O2,c
+h_p,H+,p
+succ_p,Succinate,p
+phpyr_c,Phenylpyruvate,c
+fru_e,D-Fructose,e
+pyr_e,Pyruvate,e
+5mthf_c,5-Methyltetrahydrofolate,c
+nad_c,Nicotinamide adenine dinucleotide,c
+tdeACP_c,Cis-tetradec-7-enoyl-[acyl-carrier protein] (n-C14:1),c
+3ocvac11eACP_c,3-oxo-cis-vacc-11-enoyl-[acyl-carrier protein],c
+3hoctaACP_c,(R)-3-Hydroxyoctadecanoyl-[acyl-carrier protein],c
+adp_c,ADP C10H12N5O10P2,c
+mal__L_c,L-Malate,c
+g3p_c,Glyceraldehyde 3-phosphate,c
+etoh_c,Ethanol,c
+so3_c,Sulfite,c
+met__L_c,L-Methionine,c
+aicar_c,5-Amino-1-(5-Phospho-D-ribosyl)imidazole-4-carboxamide,c
+5aizc_c,5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate,c
+ac_e,Acetate,e
+glx_c,Glyoxylate,c
+etoh_e,Ethanol,e
+glcn_p,D-Gluconate,p
+air_c,5-amino-1-(5-phospho-D-ribosyl)imidazole,c
+6pgc_c,6-Phospho-D-gluconate,c
+nh4_c,Ammonium,c
+tdec2eACP_c,Trans-Dec-2-enoyl-[acyl-carrier protein],c
+hdeACP_c,Cis-hexadec-9-enoyl-[acyl-carrier protein] (n-C16:1),c
+pi_c,Phosphate,c
+argsuc_c,N(omega)-(L-Arginino)succinate,c
+nh4_p,Ammonium,p
+chor_c,Chorismate,c
+hom__L_c,L-Homoserine,c
+dgdp_c,DGDP C10H12N5O10P2,c
+q8h2_c,Ubiquinol-8,c
+3odecACP_c,3-Oxodecanoyl-[acyl-carrier protein],c
+tyr__L_c,L-Tyrosine,c
+cys__L_c,L-Cysteine,c
+xylu__D_c,D-Xylulose,c
+h2s_c,Hydrogen sulfide,c
+e4p_c,D-Erythrose 4-phosphate,c
+trp__L_c,L-Tryptophan,c
+acser_c,O-Acetyl-L-serine,c
+lys__L_c,L-Lysine,c
+dudp_c,DUDP C9H11N2O11P2,c
+atp_c,ATP C10H12N5O13P3,c
+indole_c,Indole,c
+eig3p_c,D-erythro-1-(Imidazol-4-yl)glycerol 3-phosphate,c
+26dap__M_c,"Meso-2,6-Diaminoheptanedioate",c
+thf_c,"5,6,7,8-Tetrahydrofolate",c
+orot5p_c,Orotidine 5'-phosphate,c
+h_e,H+,e
+gln__L_p,L-Glutamine,p
+glyc_p,Glycerol,p
+5caiz_c,5-phosphoribosyl-5-carboxyaminoimidazole,c
+mal__L_p,L-Malate,p
+3hcpalm9eACP_c,(R)-3-hydroxy-cis-palm-9-eoyl-[acyl-carrier protein],c
+3ocpalm9eACP_c,3-oxo-cis-palm-9-eoyl-[acyl-carrier protein],c
+butACP_c,Butyryl-ACP (n-C4:0ACP),c
+dttp_c,DTTP C10H13N2O14P3,c
+lac__D_e,D-Lactate,e
+trdox_c,Oxidized thioredoxin,c
+3ig3p_c,C'-(3-Indolyl)-glycerol 3-phosphate,c
+sl26da_c,"N-Succinyl-LL-2,6-diaminoheptanedioate",c
+3hoctACP_c,(R)-3-Hydroxyoctanoyl-[acyl-carrier protein],c
+dctp_c,DCTP C9H12N3O13P3,c
+toctd2eACP_c,Trans-octadec-2-enoyl-[acyl-carrier protein],c
+grxrd_c,Glutaredoxin (reduced),c
+ru5p__D_c,D-Ribulose 5-phosphate,c
+23dhmb_c,"(R)-2,3-Dihydroxy-3-methylbutanoate",c
+pran_c,N-(5-Phospho-D-ribosyl)anthranilate,c
+glcn_c,D-Gluconate,c
+paps_c,3'-Phosphoadenylyl sulfate,c
+utp_c,UTP C9H11N2O15P3,c
+dhor__S_c,(S)-Dihydroorotate,c
+glyc_e,Glycerol,e
+4mop_c,4-Methyl-2-oxopentanoate,c
+fdp_c,"D-Fructose 1,6-bisphosphate",c
+dtmp_c,DTMP C10H13N2O8P,c
+gdp_c,GDP C10H12N5O11P2,c
+o2_p,O2 O2,p
+datp_c,DATP C10H12N5O12P3,c
+ppi_c,Diphosphate,c
+nadp_c,Nicotinamide adenine dinucleotide phosphate,c
+glu__L_c,L-Glutamate,c
+fum_c,Fumarate,c
+akg_p,2-Oxoglutarate,p
+acorn_c,N2-Acetyl-L-ornithine,c
+glu5sa_c,L-Glutamate 5-semialdehyde,c
+ile__L_c,L-Isoleucine,c
+ocACP_c,Octanoyl-ACP (n-C8:0ACP),c
+3dhq_c,3-Dehydroquinate,c
+hisp_c,L-Histidinol phosphate,c
+so4_e,Sulfate,e
+glu__L_e,L-Glutamate,e
+cbp_c,Carbamoyl phosphate,c
+3mob_c,3-Methyl-2-oxobutanoate,c
+suchms_c,O-Succinyl-L-homoserine,c
+tpalm2eACP_c,Trans-Hexadec-2-enoyl-[acyl-carrier protein],c
+3hpalmACP_c,R-3-hydroxypalmitoyl-[acyl-carrier protein],c
+gln__L_c,L-Glutamine,c
+3c3hmp_c,3-Carboxy-3-hydroxy-4-methylpentanoate,c
+anth_c,Anthranilate,c
+pap_c,"Adenosine 3',5'-bisphosphate",c
+xmp_c,Xanthosine 5'-phosphate,c
+2cpr5p_c,1-(2-Carboxyphenylamino)-1-deoxy-D-ribulose 5-phosphate,c
+rib__D_p,D-Ribose,p
+xyl__D_p,D-Xylose,p
+octeACP_c,Cis-octadec-11-enoyl-[acyl-carrier protein] (n-C18:1),c
+3hhexACP_c,(R)-3-Hydroxyhexanoyl-[acyl-carrier protein],c
+t3c5ddeceACP_c,Trans-3-cis-5-dodecenoyl-[acyl-carrier protein],c
+co2_p,CO2 CO2,p
+ala__L_c,L-Alanine,c
+hco3_c,Bicarbonate,c
+phe__L_c,L-Phenylalanine,c
+mlthf_c,"5,10-Methylenetetrahydrofolate",c
+t3c7mrseACP_c,Trans-3-cis-7-myristoleoyl-[acyl-carrier protein],c
+t3c11vaceACP_c,Trans-3-cis-11-vacceoyl-[acyl-carrier protein],c
+1pyr5c_c,1-Pyrroline-5-carboxylate,c
+acald_p,Acetaldehyde,p
+2ippm_c,2-Isopropylmaleate,c
+3psme_c,5-O-(1-Carboxyvinyl)-3-phosphoshikimate,c
+imacp_c,3-(Imidazol-4-yl)-2-oxopropyl phosphate,c
+3c2hmp_c,3-Carboxy-2-hydroxy-4-methylpentanoate,c
+pser__L_c,O-Phospho-L-serine,c
+ocdcaACP_c,Octadecanoyl-ACP (n-C18:0ACP),c
+gmp_c,GMP C10H12N5O8P,c
+3dhsk_c,3-Dehydroshikimate,c
+acACP_c,Acetyl-ACP,c
+h2o_c,H2O H2O,c
+alac__S_c,(S)-2-Acetolactate,c
+dcdp_c,DCDP C9H12N3O10P2,c
+gly_c,Glycine,c
+malcoa_c,Malonyl CoA C24H33N7O19P3S,c
+fru_p,D-Fructose,p
+xyl__D_e,D-Xylose,e
+phom_c,O-Phospho-L-homoserine,c
+glc__D_e,D-Glucose,e
+nh4_e,Ammonium,e
+f6p_c,D-Fructose 6-phosphate,c
+pphn_c,Prephenate,c
+prlp_c,5-[(5-phospho-1-deoxyribulos-1-ylamino)methylideneamino]-1-(5-phosphoribosyl)imidazole-4-carboxamide,c
+s7p_c,Sedoheptulose 7-phosphate,c
+prfp_c,1-(5-Phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino]imidazole-4-carboxamide,c
+tmrs2eACP_c,Trans-Tetradec-2-enoyl-[acyl-carrier protein],c
+o2_e,O2 O2,e
+succ_e,Succinate,e
+mql8_c,Menaquinol 8,c
+glyc__R_c,(R)-Glycerate,c
+g6p_c,D-Glucose 6-phosphate,c
+trdrd_c,Reduced thioredoxin,c
+methf_c,"5,10-Methenyltetrahydrofolate",c
+ddcaACP_c,Dodecanoyl-ACP (n-C12:0ACP),c
+prpp_c,5-Phospho-alpha-D-ribose 1-diphosphate,c
+histd_c,L-Histidinol,c
+for_p,Formate,p
+orot_c,Orotate C5H3N2O4,c
+glc__D_p,D-Glucose,p
+q8_c,Ubiquinone-8,c
+orn_c,Ornithine,c
+dcaACP_c,Decanoyl-ACP (n-C10:0ACP),c
+3hcddec5eACP_c,(R)-3-hydroxy-cis-dodec-5-enoyl-[acyl-carrier protein],c
+tddec2eACP_c,Trans-Dodec-2-enoyl-[acyl-carrier protein],c
+fgam_c,N2-Formyl-N1-(5-phospho-D-ribosyl)glycinamide,c
+cit_c,Citrate,c
+skm5p_c,Shikimate 5-phosphate,c
+oaa_c,Oxaloacetate,c
+23dhmp_c,"(R)-2,3-Dihydroxy-3-methylpentanoate",c
+fprica_c,5-Formamido-1-(5-phospho-D-ribosyl)imidazole-4-carboxamide,c
+glcn_e,D-Gluconate,e
+ac_p,Acetate,p
+his__L_c,L-Histidine,c
+so4_c,Sulfate,c
+6pgl_c,"6-phospho-D-glucono-1,5-lactone",c
+2dda7p_c,2-Dehydro-3-deoxy-D-arabino-heptonate 7-phosphate,c
+sl2a6o_c,N-Succinyl-2-L-amino-6-oxoheptanedioate,c
+gtp_c,GTP C10H12N5O14P3,c
+so4_p,Sulfate,p
+succ_c,Succinate,c
+aps_c,Adenosine 5'-phosphosulfate,c
+thdp_c,"2,3,4,5-Tetrahydrodipicolinate",c
+cdp_c,CDP C9H12N3O11P2,c
+glyc__R_e,(R)-Glycerate,e
+nadph_c,Nicotinamide adenine dinucleotide phosphate - reduced,c
+acglu_c,N-Acetyl-L-glutamate,c
+3hddecACP_c,(R)-3-Hydroxydodecanoyl-[acyl-carrier protein],c
+2obut_c,2-Oxobutanoate,c
+cddec5eACP_c,Cis-dodec-5-enoyl-[acyl-carrier protein] (n-C12:1),c
+glyc_c,Glycerol,c
+val__L_c,L-Valine,c
+pro__L_c,L-Proline,c
+cbasp_c,N-Carbamoyl-L-aspartate,c
+mqn8_c,Menaquinone 8,c
+lac__D_p,D-Lactate,p
+malACP_c,Malonyl-[acyl-carrier protein],c
+3hdecACP_c,(R)-3-Hydroxydecanoyl-[acyl-carrier protein],c
+cdec3eACP_c,Cis-dec-3-enoyl-[acyl-carrier protein] (n-C10:1),c
+3hcmrs7eACP_c,(R)-3-hydroxy-cis-myristol-7-eoyl-[acyl-carrier protein],c
+glu__L_p,L-Glutamate,p
+3oddecACP_c,3-Oxododecanoyl-[acyl-carrier protein],c
+glyc__R_p,(R)-Glycerate,p
+3ooctdACP_c,3-Oxooctadecanoyl-[acyl-carrier protein],c
+but2eACP_c,But-2-enoyl-[acyl-carrier protein],c
+pyr_c,Pyruvate,c
+dump_c,DUMP C9H11N2O8P,c
+acon_C_c,Cis-Aconitate,c
+grxox_c,Glutaredoxin (oxidized),c
+icit_c,Isocitrate,c
+lac__D_c,D-Lactate,c
+nadh_c,Nicotinamide adenine dinucleotide - reduced,c
+amp_c,AMP C10H12N5O7P,c
+3php_c,3-Phosphohydroxypyruvate,c
+dtdp_c,DTDP C10H13N2O11P2,c
+dhf_c,"7,8-Dihydrofolate",c
+for_c,Formate,c
+pi_e,Phosphate,e
+3opalmACP_c,3-Oxohexadecanoyl-[acyl-carrier protein],c
+3hcvac11eACP_c,(R)-3-hydroxy-cis-vacc-11-enoyl-[acyl-carrier protein],c
+coa_c,Coenzyme A,c
+asn__L_c,L-Asparagine,c
+udp_c,UDP C9H11N2O12P2,c
+leu__L_c,L-Leucine,c
+25aics_c,(S)-2-[5-Amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido]succinate,c
+3omrsACP_c,3-Oxotetradecanoyl-[acyl-carrier protein],c
+acald_c,Acetaldehyde,c
+3hmrsACP_c,(R)-3-Hydroxytetradecanoyl-[acyl-carrier protein],c
+pram_c,5-Phospho-beta-D-ribosylamine,c
+3c4mop_c,3-Carboxy-4-methyl-2-oxopentanoate,c
+hcys__L_c,L-Homocysteine,c
+mal__L_e,L-Malate,e
+co2_c,CO2 CO2,c
+pi_p,Phosphate,p
+fum_e,Fumarate,e
+acald_e,Acetaldehyde,e
+etoh_p,Ethanol,p
+gthox_c,Oxidized glutathione,c
+gar_c,N1-(5-Phospho-D-ribosyl)glycinamide,c
+3haACP_c,(3R)-3-Hydroxyacyl-[acyl-carrier protein],c
+3ooctACP_c,3-Oxooctanoyl-[acyl-carrier protein],c
+3ocmrs7eACP_c,3-oxo-cis-myristol-7-eoyl-[acyl-carrier protein],c
+acg5p_c,N-Acetyl-L-glutamyl 5-phosphate,c
+4pasp_c,4-Phospho-L-aspartate,c
+glu5p_c,L-Glutamate 5-phosphate,c
+h2o_e,H2O H2O,e
+23dhdp_c,"2,3-Dihydrodipicolinate",c
+3mop_c,(S)-3-Methyl-2-oxopentanoate,c
+dgtp_c,DGTP C10H12N5O13P3,c
+rib__D_e,D-Ribose,e
+dcamp_c,"N6-(1,2-Dicarboxyethyl)-AMP",c
+myrsACP_c,Myristoyl-ACP (n-C14:0ACP),c
+ACP_c,Acyl carrier protein,c
+palmACP_c,Palmitoyl-ACP (n-C16:0ACP),c
+succoa_c,Succinyl-CoA,c
+xyl__D_c,D-Xylose,c
+for_e,Formate,e
