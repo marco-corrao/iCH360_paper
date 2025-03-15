@@ -64,7 +64,7 @@ def plot_envelope(
             prod_env_df.flux_minimum.values,
             prod_env_df.flux_maximum.values,
             linewidth=0,
-            alpha=0.2,
+            alpha=0.3,
             facecolor=color,
             label='')
     ax.grid()
