@@ -1,0 +1,3 @@
+A few anecdotal examples related to use-cases in which the large size of genome-scale models can results in unrealistic predictions or metabolic bypasses, when using simple stoichiometric methods such as FBA. These predictions are filtered out _by construction_ in iCH360, since a many peripheral pathways are not included in the model
+
+**NOTE**: these are just some examples from anecdotal experience, and are not the results of a systematic investigation / comparison between models.
