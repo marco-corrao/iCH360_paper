@@ -4,7 +4,7 @@ library(ggplot2)
 library(ggpubr)
 
 pta_data=
-  read.csv('../../Analysis/PTA/out/pta_reactions_data.csv') 
+  read.csv('../../Analysis/PTA/out/pta_fluxes.csv') 
 reaction_enzyme_map=
   read.csv('../../Enzyme_constraints/EC_model_building_pipeline/reaction_enzyme_kcat_mapping/parsed/EC_table_w_manual_curation.csv')
 enzyme_abundance_data=
@@ -108,8 +108,7 @@ cdf_plot=
   cdf_plot+
   geom_text(aes(x=400,y=0.5,label="p< 0.001"),color="black")
 cdf_plot
-
-ggsave("../figures/PTA_FFE_vs_enzyme_abundance_cdf_comparison.pdf",cdf_plot,width=8,height=6)
+#ggsave("../figures/PTA_FFE_vs_enzyme_abundance_cdf_comparison.pdf",cdf_plot,width=8,height=6)
 
 
 
