@@ -113,7 +113,7 @@ data %>%
   stat_compare_means(comparisons = my_comparisons,
                      method='wilcox.test',
                      )+ # Add pairwise comparisons p-value
-  scale_fill_manual(values = deep)+
+  scale_fill_manual(values = c("#feab74ff","#972c7eff"))+
   theme_bw()+
   labs(y='Relative fitness (Log2)',x='')+
   theme(legend.position = "none") +
