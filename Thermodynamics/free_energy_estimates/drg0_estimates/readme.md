@@ -15,7 +15,7 @@ where $\epsilon_{MC}$ is another vector of corrections (again, one per metabolit
 Similarly to before, the multi-compartment correction only affects the mean estimate, yielding:$$\Delta_rG'^{\circ}_{MC} \sim N(\bar{\Delta_rG'^{\circ}}_{MC},~\Sigma)$$
 where $\bar{\Delta_rG'^{\circ}}_{MC} \equiv \bar{\Delta_rG'^{\circ}}+(S^\top \epsilon_{MC})$
 
-The compartment parameters used for Legendre transfom and multi-compartment crrections are
+The compartment parameters used for Legendre transform and multi-compartment corrections are
 
 |Compartment|pH  |pMg|I  |phi   |T     |
 |-----------|----|---|---|------|------|
