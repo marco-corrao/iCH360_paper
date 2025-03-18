@@ -1,8 +1,8 @@
 This repository contains code and data required to reproduce all results in: 
 
-_*A compact model of *Escherichia Coli* core and biosynthetic metabolism_
+_A compact model of *Escherichia Coli* core and biosynthetic metabolism_
 
-availble at
+available at
 
 https://arxiv.org/abs/2406.16596
 
@@ -29,7 +29,7 @@ Contains all the relevant metabolic maps, ready to be loaded in Escher for visua
 - The maps for the pathways not included in the model, but used to compute the equivalent biomass reaction used in the model.
 #### [./Annotation](./Visualisation)
 Contains annotation maps to the EcoCyc database [2].
-#### [./Knowledge_graph](./Knowledge_graph)
+#### [./Knowledge_Graph](./Knowledge_Graph)
 Contains the computational pipeline used to build the knowledge graph complementing the stoichiometric model, as well as the final graph structure in GML (.gml) and cytoscape (.cyjs) formats
 #### [./Analysis](./Analysis)
 Contains the python scripts required to reproduce all analysis mentioned in the paper. More specific details are provided in each subfolder
@@ -77,9 +77,25 @@ gurobipy==11.0.1 #requires a valid GUROBI licence
 equilibrator-api==0.4.7
 equilibrator-assets==0.4.1
 cvxpy==1.5.2
-
-
 ```
+**Note**
+
+
+The following steps may be needed to correctly run enkie and eQuilibrator to reproduce the thermodynamic analysis performed on iCH360.
+
+1. For first time use of enkie, used in  [pta.ipynb](./Analysis/PTA/pta.ipynb), it may be necessary to create the folder ```~/.cache/enkie``` in your home directory
+(see https://gitlab.com/csb.ethz/enkie/-/issues/1)
+
+2. If issues  are encountered running eQuilibrator in [./Thermodynamics/free_energy_estimation/drg0_estimation.ipynb](drg0_estimation.ipynb), it may be necessary to manually save the files from the following repos: 
+    - https://zenodo.org/records/4128543 
+    - https://zenodo.org/records/4013789
+    -  https://zenodo.org/records/4010930
+
+    to ```~/.cache/equilibrator```
+
+We kindly thank Benjamin Luke Coltman for reccomending this fixes.
+
+
 ## References
  1. King, Z. A. et al. Escher: A Web Application for Building, Sharing, and Embedding Data-Rich Visualizations of Biological Pathways. PLOS Computational Biology 11, e1004321 (2015).
  2. Keseler, I. M. et al. The EcoCyc database: reflecting new knowledge about _Escherichia coli_ K-12. Nucleic Acids Res 45, D543–D550 (2017).

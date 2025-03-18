@@ -23689,8 +23689,8 @@ graph [
     weight NAN
     type "catalysis"
     subtype "secondary"
-    notes "TBC"
-    references NAN
+    notes "Two isozymes, (cysM and cysK) are known to carry Cysteine Synthase activity in E. coli. However, cysK mutant have been reported to be cysteine auxotrophs, suggesting a secondary role for cysM in this reaction"
+    references "PMID: 16000837"
   ]
   edge [
     source 386
@@ -24820,8 +24820,8 @@ graph [
     weight NAN
     type "catalysis"
     subtype "secondary"
-    notes NAN
-    references NAN
+    notes "E. coli K-12 encodes two proteins capable of HSDy activity, class I HSD (thrA) and class II HSD (metL). In PMID:4860558, the activity of the two enzymes have been investegated extensively. Particularly , class II enzymes were reported to be repressed by methionine and considerably less abundant. A strain lacking activity of the class I enzymes was reported to have strong fitness losses (it required threonine or homoserine for normal growth, though it eventually grew in glucose minimal medium after 48h). Additionally, isolated mutant that was found to constitutively express class II enzymes (but lacked class I enzyme activity) was shown to grow normally even in the absence of threonine. Combined together, this evidence suggest a seconary role for metL in the context of this reaction under normal physiological conditions, potentially due to regulated expression levels in the wild-type strain not allowing for sufficient enzyme production to support the level of homoserine dehydrogenase activity required for threonine and methionine biosynthesis."
+    references "PMID:4860558"
   ]
   edge [
     source 485

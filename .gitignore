@@ -15,5 +15,5 @@ Manuscript_Figures/**/*.png
 *.eps
 *.pyc
 *.sqlite
-Knowledge_graph/graph_assembly/biocyc_username_and_password.csv
+Knowledge_Graph/graph_assembly/biocyc_username_and_password.csv
 *.Rhistory
