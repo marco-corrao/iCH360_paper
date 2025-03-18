@@ -86,14 +86,14 @@ The following steps may be needed to correctly run enkie and eQuilibrator to rep
 1. For first time use of enkie, used in  [pta.ipynb](./Analysis/PTA/pta.ipynb), it may be necessary to create the folder ```~/.cache/enkie``` in your home directory
 (see https://gitlab.com/csb.ethz/enkie/-/issues/1)
 
-2. If issues  are encountered running eQuilibrator in [./Thermodynamics/free_energy_estimation/drg0_estimation.ipynb](drg0_estimation.ipynb), it may be necessary to manually save the files from the following repos: 
+2. If issues  are encountered running eQuilibrator in [drg0_estimation.ipynb](./Thermodynamics/free_energy_estimation/drg0_estimation.ipynb), it may be necessary to manually save the files from the following repos: 
     - https://zenodo.org/records/4128543 
     - https://zenodo.org/records/4013789
     -  https://zenodo.org/records/4010930
 
     to ```~/.cache/equilibrator```
 
-We kindly thank Benjamin Luke Coltman for reccomending this fixes.
+We kindly thank Benjamin Luke Coltman for suggesting these fixes.
 
 
 ## References
