@@ -7,7 +7,6 @@ Analysis/EFM_growth_yield_screening/out/*
 Thermodynamics/free_energy_estimation/data/custom_compounds_cache.sqlite*
 Manuscript_Figures/other_figures/*
 Enzyme_Constraints/data/PRESTO*
-*.html
 *.pdf
 Manuscript_Figures/**/*.png
 *.cdxml
