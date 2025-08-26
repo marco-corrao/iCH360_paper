@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:fbc="http://www.sbml.org/sbml/level3/version1/fbc/version2" metaid="meta_" sboTerm="SBO:0000624" level="3" version="1" fbc:required="false">
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:fbc="http://www.sbml.org/sbml/level3/version1/fbc/version2" sboTerm="SBO:0000624" level="3" version="1" fbc:required="false">
   <model metaid="meta_iCH360" id="iCH360" fbc:strict="true">
     <listOfUnitDefinitions>
       <unitDefinition id="mmol_per_gDW_per_hr">
@@ -16922,6 +16922,7 @@
                 <rdf:Bag>
                   <rdf:li rdf:resource="https://identifiers.org/bigg.reaction/G5SADs"/>
                   <rdf:li rdf:resource="https://identifiers.org/biocyc/ECOLI:SPONTPRO-RXN"/>
+                  <rdf:li rdf:resource="https://identifiers.org/deprecated_metanetx.reaction/MNXR99897"/>
                   <rdf:li rdf:resource="https://identifiers.org/kegg.reaction/R03314"/>
                   <rdf:li rdf:resource="https://identifiers.org/metanetx.reaction/MNXR153703"/>
                   <rdf:li rdf:resource="https://identifiers.org/reactome/R-HSA-70655"/>
@@ -16932,7 +16933,6 @@
                   <rdf:li rdf:resource="https://identifiers.org/rhea/28236"/>
                   <rdf:li rdf:resource="https://identifiers.org/seed.reaction/rxn11220"/>
                   <rdf:li rdf:resource="https://identifiers.org/seed.reaction/rxn02374"/>
-                  <rdf:li rdf:resource="https://identifiers.org/deprecated_metanetx.reaction/MNXR99897"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -26877,7 +26877,7 @@
           </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
-      <reaction id="R_Biomass" name="Equivalent Biomass from iML1515" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+      <reaction metaid="meta_R_Biomass" sboTerm="SBO:0000629" id="R_Biomass" name="Equivalent Biomass from iML1515" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
         <listOfReactants>
           <speciesReference species="M_26dap__M_c" stoichiometry="0.027788" constant="true"/>
           <speciesReference species="M_3hmrsACP_c" stoichiometry="0.077824" constant="true"/>
@@ -35849,12 +35849,15 @@
           </rdf:RDF>
         </annotation>
       </fbc:geneProduct>
-      <fbc:geneProduct metaid="meta_G_b2455" fbc:id="G_b2455" fbc:name="G_b2455" fbc:label="G_b2455">
+      <fbc:geneProduct metaid="meta_G_b2455" sboTerm="SBO:0000243" fbc:id="G_b2455" fbc:name="eutE" fbc:label="G_b2455">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_G_b2455">
               <bqbiol:is>
                 <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0008091"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/G7285"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/946943"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/P77445"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -35862,12 +35865,21 @@
           </rdf:RDF>
         </annotation>
       </fbc:geneProduct>
-      <fbc:geneProduct metaid="meta_G_b0383" fbc:id="G_b0383" fbc:name="G_b0383" fbc:label="G_b0383">
+      <fbc:geneProduct metaid="meta_G_b0383" sboTerm="SBO:0000243" fbc:id="G_b0383" fbc:name="phoA" fbc:label="G_b0383">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_G_b0383">
               <bqbiol:is>
                 <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0001328"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG10727"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/945041"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigi/49176017"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_locus_tag/b0383"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_name/phoA"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK0378"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW0374"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/psiA"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/P00634"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -35875,12 +35887,21 @@
           </rdf:RDF>
         </annotation>
       </fbc:geneProduct>
-      <fbc:geneProduct metaid="meta_G_b0766" fbc:id="G_b0766" fbc:name="G_b0766" fbc:label="G_b0766">
+      <fbc:geneProduct metaid="meta_G_b0766" sboTerm="SBO:0000243" fbc:id="G_b0766" fbc:name="ybhA" fbc:label="G_b0766">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_G_b0766">
               <bqbiol:is>
                 <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0002607"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG11239"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/945372"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigi/16128734"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_locus_tag/b0766"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_name/ybhA"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/modD"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK0755"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW0749"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/P21829"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -35888,12 +35909,21 @@
           </rdf:RDF>
         </annotation>
       </fbc:geneProduct>
-      <fbc:geneProduct metaid="meta_G_b2843" fbc:id="G_b2843" fbc:name="G_b2843" fbc:label="G_b2843">
+      <fbc:geneProduct metaid="meta_G_b2843" sboTerm="SBO:0000243" fbc:id="G_b2843" fbc:name="kduI" fbc:label="G_b2843">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_G_b2843">
               <bqbiol:is>
                 <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0009332"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG13096"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/947319"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigi/16130747"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_locus_tag/b2843"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_name/kduI"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/yqeE"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW2811"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK2841"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/Q46938"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -35901,12 +35931,15 @@
           </rdf:RDF>
         </annotation>
       </fbc:geneProduct>
-      <fbc:geneProduct metaid="meta_G_b1675" fbc:id="G_b1675" fbc:name="G_b1675" fbc:label="G_b1675">
+      <fbc:geneProduct metaid="meta_G_b1675" sboTerm="SBO:0000243" fbc:id="G_b1675" fbc:name="fumD" fbc:label="G_b1675">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_G_b1675">
               <bqbiol:is>
                 <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0005591"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/G6903"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/946180"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/P0ACX5"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -35914,12 +35947,15 @@
           </rdf:RDF>
         </annotation>
       </fbc:geneProduct>
-      <fbc:geneProduct metaid="meta_G_b2929" fbc:id="G_b2929" fbc:name="G_b2929" fbc:label="G_b2929">
+      <fbc:geneProduct metaid="meta_G_b2929" sboTerm="SBO:0000243" fbc:id="G_b2929" fbc:name="fumE" fbc:label="G_b2929">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_G_b2929">
               <bqbiol:is>
                 <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0009612"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG11162"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/946861"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/P11663"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -35927,12 +35963,22 @@
           </rdf:RDF>
         </annotation>
       </fbc:geneProduct>
-      <fbc:geneProduct metaid="meta_G_b0514" fbc:id="G_b0514" fbc:name="G_b0514" fbc:label="G_b0514">
+      <fbc:geneProduct metaid="meta_G_b0514" sboTerm="SBO:0000243" fbc:id="G_b0514" fbc:name="glxK" fbc:label="G_b0514">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_G_b0514">
               <bqbiol:is>
                 <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0001773"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG13621"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/945129"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigi/16128498"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_locus_tag/b0514"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_name/glxK"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW0502"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK0507"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ybbZ"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/glxB5"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/P77364"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -35940,12 +35986,23 @@
           </rdf:RDF>
         </annotation>
       </fbc:geneProduct>
-      <fbc:geneProduct metaid="meta_G_b4055" fbc:id="G_b4055" fbc:name="G_b4055" fbc:label="G_b4055">
+      <fbc:geneProduct metaid="meta_G_b4055" sboTerm="SBO:0000243" fbc:id="G_b4055" fbc:name="aphA" fbc:label="G_b4055">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_G_b4055">
               <bqbiol:is>
                 <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0013283"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG11934"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/948562"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigi/16131881"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_locus_tag/b4055"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_name/aphA"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/hobH"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/napA"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/yjbP"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW4015"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK4047"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/P0AE22"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -35953,12 +36010,15 @@
           </rdf:RDF>
         </annotation>
       </fbc:geneProduct>
-      <fbc:geneProduct metaid="meta_G_b0598" fbc:id="G_b0598" fbc:name="G_b0598" fbc:label="G_b0598">
+      <fbc:geneProduct metaid="meta_G_b0598" sboTerm="SBO:0000243" fbc:id="G_b0598" fbc:name="cstA" fbc:label="G_b0598">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_G_b0598">
               <bqbiol:is>
                 <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0002061"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG10167"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/945213"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/P15078"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -35966,12 +36026,15 @@
           </rdf:RDF>
         </annotation>
       </fbc:geneProduct>
-      <fbc:geneProduct metaid="meta_G_b4354" fbc:id="G_b4354" fbc:name="G_b4354" fbc:label="G_b4354">
+      <fbc:geneProduct metaid="meta_G_b4354" sboTerm="SBO:0000243" fbc:id="G_b4354" fbc:name="btsT" fbc:label="G_b4354">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_G_b4354">
               <bqbiol:is>
                 <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0014278"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/G7942"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/948914"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/P39396"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -35979,12 +36042,15 @@
           </rdf:RDF>
         </annotation>
       </fbc:geneProduct>
-      <fbc:geneProduct metaid="meta_G_b4602" fbc:id="G_b4602" fbc:name="G_b4602" fbc:label="G_b4602">
+      <fbc:geneProduct metaid="meta_G_b4602" sboTerm="SBO:0000243" fbc:id="G_b4602" fbc:name="cydH" fbc:label="G_b4602">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_G_b4602">
               <bqbiol:is>
                 <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0285185"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/G0-10594"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/5061505"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/A5A618"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -35992,12 +36058,14 @@
           </rdf:RDF>
         </annotation>
       </fbc:geneProduct>
-      <fbc:geneProduct metaid="meta_G_b4592" fbc:id="G_b4592" fbc:name="G_b4592" fbc:label="G_b4592">
+      <fbc:geneProduct metaid="meta_G_b4592" sboTerm="SBO:0000243" fbc:id="G_b4592" fbc:name="appX" fbc:label="G_b4592">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_G_b4592">
               <bqbiol:is>
                 <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/G0-10588"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/948955"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/P24244"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -36005,12 +36073,22 @@
           </rdf:RDF>
         </annotation>
       </fbc:geneProduct>
-      <fbc:geneProduct metaid="meta_G_b3722" fbc:id="G_b3722" fbc:name="G_b3722" fbc:label="G_b3722">
+      <fbc:geneProduct metaid="meta_G_b3722" sboTerm="SBO:0000243" fbc:id="G_b3722" fbc:name="bglF" fbc:label="G_b3722">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_G_b3722">
               <bqbiol:is>
                 <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0012171"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG10115"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/948236"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigi/16131590"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_locus_tag/b3722"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_name/bglF"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW3700"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/bglC"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK3715"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/bglS"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/P08722"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -36018,12 +36096,15 @@
           </rdf:RDF>
         </annotation>
       </fbc:geneProduct>
-      <fbc:geneProduct metaid="meta_G_b1653" fbc:id="G_b1653" fbc:name="G_b1653" fbc:label="G_b1653">
+      <fbc:geneProduct metaid="meta_G_b1653" sboTerm="SBO:0000243" fbc:id="G_b1653" fbc:name="lhr" fbc:label="G_b1653">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_G_b1653">
               <bqbiol:is>
                 <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0005525"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG11548"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/946156"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/P30015"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -36031,12 +36112,15 @@
           </rdf:RDF>
         </annotation>
       </fbc:geneProduct>
-      <fbc:geneProduct metaid="meta_G_b1203" fbc:id="G_b1203" fbc:name="G_b1203" fbc:label="G_b1203">
+      <fbc:geneProduct metaid="meta_G_b1203" sboTerm="SBO:0000243" fbc:id="G_b1203" fbc:name="ychF" fbc:label="G_b1203">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_G_b1203">
               <bqbiol:is>
                 <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0004038"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG11404"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/945769"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/P0ABU2"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -36044,12 +36128,15 @@
           </rdf:RDF>
         </annotation>
       </fbc:geneProduct>
-      <fbc:geneProduct metaid="meta_G_b2184" fbc:id="G_b2184" fbc:name="G_b2184" fbc:label="G_b2184">
+      <fbc:geneProduct metaid="meta_G_b2184" sboTerm="SBO:0000243" fbc:id="G_b2184" fbc:name="radD" fbc:label="G_b2184">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_G_b2184">
               <bqbiol:is>
                 <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0007228"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG12045"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/945529"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/P33919"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -36057,14 +36144,163 @@
           </rdf:RDF>
         </annotation>
       </fbc:geneProduct>
-      <fbc:geneProduct fbc:id="G_b3073" fbc:name="G_b3073" fbc:label="G_b3073"/>
-      <fbc:geneProduct fbc:id="G_b0200" fbc:name="G_b0200" fbc:label="G_b0200"/>
-      <fbc:geneProduct fbc:id="G_b2293" fbc:name="G_b2293" fbc:label="G_b2293"/>
-      <fbc:geneProduct fbc:id="G_b1814" fbc:name="G_b1814" fbc:label="G_b1814"/>
-      <fbc:geneProduct fbc:id="G_b4395" fbc:name="G_b4395" fbc:label="G_b4395"/>
-      <fbc:geneProduct fbc:id="G_b3385" fbc:name="G_b3385" fbc:label="G_b3385"/>
-      <fbc:geneProduct fbc:id="G_b3829" fbc:name="G_b3829" fbc:label="G_b3829"/>
-      <fbc:geneProduct fbc:id="G_b0902" fbc:name="G_b0902" fbc:label="G_b0902"/>
+      <fbc:geneProduct metaid="meta_G_b3073" sboTerm="SBO:0000243" fbc:id="G_b3073" fbc:name="patA" fbc:label="G_b3073">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_G_b3073">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0010092"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG12718"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/947120"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigi/145698310"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_locus_tag/b3073"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_name/patA"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW5510"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ygjG"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK3063"/>
+                  <rdf:li rdf:resource="https://identifiers.org/uniprot/P42588"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </fbc:geneProduct>
+      <fbc:geneProduct metaid="meta_G_b0200" sboTerm="SBO:0000243" fbc:id="G_b0200" fbc:name="gmhB" fbc:label="G_b0200">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_G_b0200">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0000675"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG11736"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/944879"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigi/16128193"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_locus_tag/b0200"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_name/gmhB"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/gmhX"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK0200"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/gmbX"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/wcbN"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW0196"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/gmbC"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/yaeD"/>
+                  <rdf:li rdf:resource="https://identifiers.org/uniprot/P63228"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </fbc:geneProduct>
+      <fbc:geneProduct metaid="meta_G_b2293" sboTerm="SBO:0000243" fbc:id="G_b2293" fbc:name="yfbT" fbc:label="G_b2293">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_G_b2293">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0007567"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG14104"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/946777"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigi/90111414"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_locus_tag/b2293"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_name/yfbT"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK2287"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW5376"/>
+                  <rdf:li rdf:resource="https://identifiers.org/uniprot/P77625"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </fbc:geneProduct>
+      <fbc:geneProduct metaid="meta_G_b1814" sboTerm="SBO:0000243" fbc:id="G_b1814" fbc:name="sdaA" fbc:label="G_b1814">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_G_b1814">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0006039"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG10930"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/946331"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigi/16129768"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_locus_tag/b1814"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_name/sdaA"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW1803"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK1812"/>
+                  <rdf:li rdf:resource="https://identifiers.org/uniprot/P16095"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </fbc:geneProduct>
+      <fbc:geneProduct metaid="meta_G_b4395" sboTerm="SBO:0000243" fbc:id="G_b4395" fbc:name="ytjC" fbc:label="G_b4395"/>
+      <fbc:geneProduct metaid="meta_G_b3385" sboTerm="SBO:0000243" fbc:id="G_b3385" fbc:name="gph" fbc:label="G_b3385">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_G_b3385">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0011058"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG11871"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/947895"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigi/16131263"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_locus_tag/b3385"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_name/gph"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/yhfE"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK3372"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW3348"/>
+                  <rdf:li rdf:resource="https://identifiers.org/uniprot/P32662"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </fbc:geneProduct>
+      <fbc:geneProduct metaid="meta_G_b3829" sboTerm="SBO:0000243" fbc:id="G_b3829" fbc:name="metE" fbc:label="G_b3829">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_G_b3829">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0012520"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG10584"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/948323"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigi/16131678"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_locus_tag/b3829"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_name/metE"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK3823"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW3805"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/metB12"/>
+                  <rdf:li rdf:resource="https://identifiers.org/uniprot/P25665"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </fbc:geneProduct>
+      <fbc:geneProduct metaid="meta_G_b0902" sboTerm="SBO:0000243" fbc:id="G_b0902" fbc:name="pflA" fbc:label="G_b0902">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_G_b0902">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/asap/ABE-0003068"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ecogene/EG10028"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigene/945517"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncbigi/16128869"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_locus_tag/b0902"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_name/pflA"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/ECK0893"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/JW0885"/>
+                  <rdf:li rdf:resource="https://identifiers.org/refseq_synonym/act"/>
+                  <rdf:li rdf:resource="https://identifiers.org/uniprot/P0A9N4"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </fbc:geneProduct>
     </fbc:listOfGeneProducts>
   </model>
 </sbml>
