@@ -12,6 +12,7 @@ Manuscript_Figures/**/*.png
 *.cdxml
 *.svg
 *.eps
+*.tif
 *.pyc
 *.sqlite
 Knowledge_Graph/graph_assembly/biocyc_username_and_password.csv
