@@ -4,7 +4,7 @@ _A compact model of *Escherichia Coli* core and biosynthetic metabolism_
 
 available at
 
-https://arxiv.org/abs/2406.16596
+https://doi.org/10.1371/journal.pcbi.1013564
 
 ## Using *i*CH360
 
